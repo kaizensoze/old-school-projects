@@ -1,0 +1,99 @@
+<!ENTITY menu.help "Pomoc">
+<!ENTITY menu.manual-check "Sprawdź adres URL">
+<!ENTITY menu.preferences "Ustawienia">
+<!ENTITY menu.about "DownloadHelper - informacje">
+<!ENTITY label.download-one-by-one "Pobieraj po kolei">
+<!ENTITY label.storagedir "Folder przechowywania">
+<!ENTITY button.changedir "Zmień folder">
+<!ENTITY error.nohome "Folder domowy nie istnieje">
+<!ENTITY error.notadirectory "nie jest folderem">
+<!ENTITY title.preferences "Ustawienia">
+<!ENTITY title.about "DownloadHelper - informacje">
+<!ENTITY version.name "DownloadHelper">
+<!ENTITY label.menu-http-expiration "Wygaśnięcie wpisu menu (ms)">
+<!ENTITY label.icon-animation "Animacja ikony">
+<!ENTITY menu.ytlinks "Pobierz filmy z odnośników YouTube">
+<!ENTITY label.download-mode "Tryb pobierania">
+<!ENTITY label.download-mode.normal "Normalny">
+<!ENTITY label.download-mode.onebyone "Po kolei">
+<!ENTITY label.download-mode.flashgot "FlashGot">
+<!ENTITY title.credits "Twórcy">
+<!ENTITY title.general "Główne">
+<!ENTITY title.medialink "MediaLink">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "Metoda MediaLink umożliwia pobieranie plików z serwisu poprzez analizowanie odnośników HTML">
+<!ENTITY button.add "Dodaj">
+<!ENTITY button.default "Domyślne">
+<!ENTITY button.remove "Usuń">
+<!ENTITY label.file-extensions "Rozszerzenia plików">
+<!ENTITY title.mediareq "MediaReq">
+<!ENTITY mediareq.description "Metoda MediaReq analizuje wychodzące żądania HTTP w celu określenia, czy jest to plik multimedialny">
+<!ENTITY title.support-dev "Wesprzyj rozwój DownloadHelper">
+<!ENTITY label.donate-not-again "Nie pokazuj tego komunikatu ponownie">
+<!ENTITY label.donate "Wesprzyj">
+<!ENTITY label.cancel "Anuluj">
+<!ENTITY label.congratulations "Gratulacje!">
+<!ENTITY label.keep-spaces "Zachowaj spacje w nazwach plików">
+<!ENTITY title.sites "Serwisy multimedialne DownloadHelper">
+<!ENTITY button.sites.close "Zamknij">
+<!ENTITY button.sites.open "Otwórz">
+<!ENTITY button.sites.report "Zgłoś działający serwis">
+<!ENTITY column.sites.name "Nazwa">
+<!ENTITY column.sites.rating "Ocena">
+<!ENTITY column.sites.count "Komentarze">
+<!ENTITY column.sites.date "Data dodania">
+<!ENTITY column.sites.url "Adres URL">
+<!ENTITY button.site.close "Zamknij">
+<!ENTITY label.site.name "Nazwa">
+<!ENTITY caption.site.site "Serwis multimedialny">
+<!ENTITY title.site "Serwis multimedialny">
+<!ENTITY label.site.url "Adres URL">
+<!ENTITY label.site.date "Dodany">
+<!ENTITY label.site.rating "Ocena">
+<!ENTITY label.site.no-rating "Brak">
+<!ENTITY button.site.check "Sprawdź serwis">
+<!ENTITY button.site.comment "Dodaj komentarz">
+<!ENTITY label.comment.site "Serwis">
+<!ENTITY title.comment "Komentarz">
+<!ENTITY caption.comment.comment "Dodaj komentarz">
+<!ENTITY label.comment.author "Pseudonim">
+<!ENTITY help.comment.author "Twoje imię lub pseudonim">
+<!ENTITY label.comment.title "Tytuł">
+<!ENTITY help.comment.title "Tytuł komentarza">
+<!ENTITY label.comment.comment "Komentarz">
+<!ENTITY help.comment.comment "Pozostaw puste wiersze, aby oddzielić akapity">
+<!ENTITY label.comment.tags "Słowa kluczowe">
+<!ENTITY help.comment.tags "Oddzielaj spacjami (np. &quot;wiadomości&quot; lub &quot;dla dorosłych&quot;)">
+<!ENTITY label.comment.rating "Ocena">
+<!ENTITY help.comment.rating "0 = nieinteresujący, 5 = super serwis">
+<!ENTITY button.comment.close "Zamknij">
+<!ENTITY button.comment.submit "Wyślij komentarz">
+<!ENTITY label.comment.wait "Twój komentarz jest wysyłany. Proszę czekać...">
+<!ENTITY title.report "Zgłoś działający serwis">
+<!ENTITY caption.report.report "Zgłoś nowy działający serwis">
+<!ENTITY message.report.check-new "Proszę się upewnić, że ten serwis nie widnieje już na liście">
+<!ENTITY label.report.name "Nazwa serwisu">
+<!ENTITY help.report.name "nazwa serwisu, np. YouTube">
+<!ENTITY label.report.url "Adres URL serwisu">
+<!ENTITY help.report.url "Adres serwisu, np. http://www.youtube.com">
+<!ENTITY label.report.author "Twoje imię">
+<!ENTITY help.report.author "Imię twórcy raportu. Można pozostawić puste pole.">
+<!ENTITY label.report.description "Opis">
+<!ENTITY help.report.description "Krótki opis tego, co można znaleźć w serwisie">
+<!ENTITY button.report.submit "Zgłoś serwis">
+<!ENTITY button.report.close "Zamknij">
+<!ENTITY label.report.wait "Trwa zgłaszanie serwisu. Proszę czekać...">
+<!ENTITY menu.sites "Obsługiwane serwisy">
+<!ENTITY label.sites.list-adult "Pokaż serwisy z zawartością tylko dla dorosłych">
+<!ENTITY label.report.adult "Zawartość tylko dla dorosłych">
+<!ENTITY label.context-menu "Wyświetl w menu kontekstowym">
+<!ENTITY menu.to-sumo "Opublikuj film na SUMO.tv">
+<!ENTITY label.enable-plugin-method "Rozpoznawanie sygnatur wtyczek wideo">
+<!ENTITY label.yt-unmodified-filename "Zachowaj nazwy YouTube (CJK)">
+<!ENTITY label.disable-dwcount-cookie "Wyłącz ciasteczka liczące pobrania">
+<!ENTITY column.sites.duration "Zainteresowanie">
+<!ENTITY title.mediaweight "MediaWeight">
+<!ENTITY label.mediaweight-enabled "Włącz MediaWeight">
+<!ENTITY label.mediaweight-threshold "Próg wielkości pliku">
+<!ENTITY label.enable-medialink-method "MediaLink włączone">
+<!ENTITY mediaweight.description "Metoda MediaWeight analizauje żądania HTTP i decyduje czy jest to plik multimedialny na podstawie rozmiaru pliku">

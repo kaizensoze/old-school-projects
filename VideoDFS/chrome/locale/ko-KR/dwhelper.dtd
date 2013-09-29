@@ -1,0 +1,99 @@
+<!ENTITY menu.help "도움말">
+<!ENTITY menu.manual-check "URL 검사">
+<!ENTITY menu.preferences "설정...">
+<!ENTITY menu.about "정보...">
+<!ENTITY label.download-one-by-one "하나씩 다운로드">
+<!ENTITY label.storagedir "저장 폴더">
+<!ENTITY button.changedir "폴더 변경">
+<!ENTITY error.nohome "홈 디렉토리가 존재하지 않습니다.">
+<!ENTITY error.notadirectory "은(는) 디렉토리가 아닙니다.">
+<!ENTITY title.preferences "설정">
+<!ENTITY title.about "DownloadHelper 정보">
+<!ENTITY version.name "DownloadHelper">
+<!ENTITY label.menu-http-expiration "메뉴 항목 사라짐 (밀리초)">
+<!ENTITY label.icon-animation "아이콘 애니메이션">
+<!ENTITY menu.ytlinks "YouTube 링크로부터 비디오 다운로드">
+<!ENTITY label.download-mode "다운로드 모드">
+<!ENTITY label.download-mode.normal "표준">
+<!ENTITY label.download-mode.onebyone "하나씩">
+<!ENTITY label.download-mode.flashgot "FlashGot">
+<!ENTITY title.credits "공헌">
+<!ENTITY title.general "일반">
+<!ENTITY title.medialink "MediaLink">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "MediaLink 방식이 HTML 링크 후킹에 의한 페이지로부터 파일 다운로드를 허용합니다.">
+<!ENTITY button.add "추가">
+<!ENTITY button.default "기본값">
+<!ENTITY button.remove "제거">
+<!ENTITY label.file-extensions "파일 확장자">
+<!ENTITY title.mediareq "MediaReq">
+<!ENTITY mediareq.description "MediaReq 방식이 미디어 파일 여부를 결정하기 위해 HTTP 요청 내보내기를 시험합니다.">
+<!ENTITY title.support-dev "DownloadHelper 개발 지원">
+<!ENTITY label.donate-not-again "다시 표시하지 않음">
+<!ENTITY label.donate "기부하기">
+<!ENTITY label.cancel "취소">
+<!ENTITY label.congratulations "축하합니다 !">
+<!ENTITY label.keep-spaces "파일명에 공백 유지하기">
+<!ENTITY title.sites "DownloadHelper 미디어 사이트">
+<!ENTITY button.sites.close "닫기">
+<!ENTITY button.sites.open "열기">
+<!ENTITY button.sites.report "작업 사이트 보고하기">
+<!ENTITY column.sites.name "이름">
+<!ENTITY column.sites.rating "평가">
+<!ENTITY column.sites.count "주석">
+<!ENTITY column.sites.date "추가된 날짜">
+<!ENTITY column.sites.url "URL">
+<!ENTITY button.site.close "닫기">
+<!ENTITY label.site.name "이름">
+<!ENTITY caption.site.site "미디어 사이트">
+<!ENTITY title.site "미디어 사이트">
+<!ENTITY label.site.url "URL">
+<!ENTITY label.site.date "추가됨">
+<!ENTITY label.site.rating "평가">
+<!ENTITY label.site.no-rating "아직 없음">
+<!ENTITY button.site.check "사이트 검사">
+<!ENTITY button.site.comment "주석 추가">
+<!ENTITY label.comment.site "사이트">
+<!ENTITY title.comment "주석">
+<!ENTITY caption.comment.comment "주석 추가">
+<!ENTITY label.comment.author "별명">
+<!ENTITY help.comment.author "이름 또는 별명">
+<!ENTITY label.comment.title "제목">
+<!ENTITY help.comment.title "주석 제목">
+<!ENTITY label.comment.comment "주석">
+<!ENTITY help.comment.comment "단락 분리는 공백 라인">
+<!ENTITY label.comment.tags "태그">
+<!ENTITY help.comment.tags "공백으로 분리된 태그 (예: &apos;뉴스 인디언&apos; 또는 &apos;성인&apos;)">
+<!ENTITY label.comment.rating "평가">
+<!ENTITY help.comment.rating "0 = 흥미없음, 5 = 훌륭함">
+<!ENTITY button.comment.close "닫기">
+<!ENTITY button.comment.submit "주석 내보내기">
+<!ENTITY label.comment.wait "주석을 내보내고 있습니다. 잠시만 기다려 주십시오...">
+<!ENTITY title.report "작업 사이트 보고하기">
+<!ENTITY caption.report.report "새 작업 사이트 보고하기">
+<!ENTITY message.report.check-new "이 사이트가 사이트 목록에 없음을 확인해 주십시오.">
+<!ENTITY label.report.name "사이트명">
+<!ENTITY help.report.name "일반 사이트명, 예: YouTube">
+<!ENTITY label.report.url "사이트 URL">
+<!ENTITY help.report.url "사이트 주소, 예: http://www.youtube.com">
+<!ENTITY label.report.author "사용자 이름">
+<!ENTITY help.report.author "보고자 이름. 비워 놓아도 됩니다.">
+<!ENTITY label.report.description "설명">
+<!ENTITY help.report.description "이 사이트에 대한 짧은 설명">
+<!ENTITY button.report.submit "사이트 내보내기">
+<!ENTITY button.report.close "닫기">
+<!ENTITY label.report.wait "사이트를 내보내고 있습니다. 잠시만 기다려 주십시오...">
+<!ENTITY menu.sites "지원되는 사이트">
+<!ENTITY label.sites.list-adult "직접 접근 가능한 성인 컨텐트 보이기">
+<!ENTITY label.report.adult "직접 접근 가능한 성인 컨텐트">
+<!ENTITY label.context-menu "컨텍스트 메뉴 보이기">
+<!ENTITY menu.to-sumo "SUMO.tv에 비디오 추가">
+<!ENTITY label.enable-plugin-method "플러그인 서명 방식 사용">
+<!ENTITY label.yt-unmodified-filename "YouTube 파일명 유지 (CJK)">
+<!ENTITY label.disable-dwcount-cookie "다운로드 카운트 쿠키 사용 안 함">
+<!ENTITY column.sites.duration "흥미있음">
+<!ENTITY title.mediaweight "MediaWeight">
+<!ENTITY label.mediaweight-enabled "MediaWeight 선택됨">
+<!ENTITY label.mediaweight-threshold "미디어 크기 제한">
+<!ENTITY label.enable-medialink-method "MediaLink 선택됨">
+<!ENTITY mediaweight.description "MediaWeight 방식이 문서 크기에 기초한 미디어 파일인지 결정하기 위해 HTTP 응답을 시험합니다.">

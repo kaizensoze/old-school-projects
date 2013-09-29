@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<!-- *****************************************************************************
+ *            Copyright (c) 2006 Michel Gutierrez. All Rights Reserved.
+ ****************************************************************************** -->
+<!DOCTYPE bindings SYSTEM "chrome://dwhelper/locale/dwhelper.dtd" >
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+	xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:xbl="http://www.mozilla.org/xbl">
+
+	<binding id="ExtList">
+
+		<xbl:content xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+			<vbox flex="1">
+				<listbox anonid="listbox" flex="1" onselect="this.parentNode.parentNode.select()"
+					seltype="multiple"/>
+				<hbox>
+					<textbox anonid="textbox" 
+						onkeyup="this.parentNode.parentNode.parentNode.keypress()"
+						/>
+					<button anonid="add-button" label="&button.add;" oncommand="this.parentNode.parentNode.parentNode.add()" disabled="true"/>
+				</hbox>
+				<hbox>
+					<button label="&button.default;" oncommand="this.parentNode.parentNode.parentNode.setDefault()"/>
+					<button anonid="remove-button" label="&button.remove;" disabled="true" oncommand="this.parentNode.parentNode.parentNode.remove()"/>
+				</hbox>
+			</vbox>
+			<children style="display: none;"/>
+		</xbl:content>
+
+		<implementation>
+
+			<constructor>
+				<![CDATA[
+this.listbox=document.getAnonymousElementByAttribute(this,"anonid","listbox");
+this.textbox=document.getAnonymousElementByAttribute(this,"anonid","textbox");
+this.removeButton=document.getAnonymousElementByAttribute(this,"anonid","remove-button");
+this.addButton=document.getAnonymousElementByAttribute(this,"anonid","add-button");
+				]]>
+			</constructor>
+
+			<method name="add">
+				<body>
+				<![CDATA[
+var ext=this.textbox.value;
+if(ext=="")
+	return;
+this.addExt(ext);
+				]]>
+				</body>
+			</method>
+
+			<method name="addExt">
+				<parameter name="ext"/>
+				<body>
+				<![CDATA[
+if(ext==null|| ext=="")
+	return;
+var listitem=document.createElement("listitem");
+listitem.setAttribute("label",ext);
+this.listbox.appendChild(listitem);
+				]]>
+				</body>
+			</method>
+
+			<method name="select">
+				<body>
+				<![CDATA[
+if(this.listbox.selectedItems.length==0) {
+	this.removeButton.setAttribute("disabled","true");
+} else {
+	this.removeButton.setAttribute("disabled","false");
+}
+				]]>
+				</body>
+			</method>
+
+			<method name="remove">
+				<body>
+				<![CDATA[
+if(this.listbox.selectedItems.length==0)
+	return;
+while(this.listbox.selectedItems.length>0) {
+	var tbd=this.listbox.selectedItems[0];
+	var item=this.listbox.firstChild;
+	while(item!=null) {
+		if(item==tbd) {
+			this.listbox.removeChild(item);
+			break;
+		}
+		item=item.nextSibling;
+	}
+}
+				]]>
+				</body>
+			</method>
+
+			<method name="keypress">
+				<body>
+				<![CDATA[
+var text=this.textbox.value;
+if(text.length==0 || this.hasExt(text))
+	this.addButton.setAttribute("disabled","true");
+else
+	this.addButton.setAttribute("disabled","false");
+				]]>
+				</body>
+			</method>
+ 
+			<method name="hasExt">
+				<parameter name="ext"/>
+				<body>
+				<![CDATA[
+var item=this.listbox.firstChild;
+while(item!=null) {
+	if(item.getAttribute("label")==ext)
+		return true;
+	item=item.nextSibling;
+}
+				]]>
+				</body>
+			</method>
+
+			<method name="clear">
+				<body>
+				<![CDATA[
+while(this.listbox.firstChild) 
+	this.listbox.removeChild(this.listbox.firstChild);
+				]]>
+				</body>
+			</method>
+
+			<method name="setDefault">
+				<body>
+				<![CDATA[
+var def=this.getAttribute("defaults");
+this.setData(def);
+				]]>
+				</body>
+			</method>
+
+			<method name="setData">
+				<parameter name="def"/>
+				<body>
+				<![CDATA[
+this.clear();
+var exts=def.split("|");
+for(var i=0;i<exts.length;i++)
+	this.addExt(exts[i]);
+				]]>
+				</body>
+			</method>
+
+			<method name="getData">
+				<body>
+				<![CDATA[
+var exts=[];
+var item=this.listbox.firstChild;
+while(item!=null) {
+	exts.push(item.getAttribute("label"));
+	item=item.nextSibling;
+}
+return exts.join("|");
+				]]>
+				</body>
+			</method>
+
+
+		</implementation>
+	</binding>
+</bindings>

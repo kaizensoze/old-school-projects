@@ -1,0 +1,99 @@
+<!ENTITY menu.help "說明">
+<!ENTITY menu.manual-check "檢查 URL">
+<!ENTITY menu.preferences "偏好設定...">
+<!ENTITY menu.about "關於...">
+<!ENTITY label.download-one-by-one "一個接一個下載">
+<!ENTITY label.storagedir "儲存目錄">
+<!ENTITY button.changedir "變更目錄">
+<!ENTITY error.nohome "根目錄不存在">
+<!ENTITY error.notadirectory "不是一個目錄">
+<!ENTITY title.preferences "偏好設定">
+<!ENTITY title.about "關於 DownloadHelper">
+<!ENTITY version.name "DownloadHelper">
+<!ENTITY label.menu-http-expiration "選單項目顯示時間 (ms)">
+<!ENTITY label.icon-animation "圖示動畫">
+<!ENTITY menu.ytlinks "從 YouTube 鏈結下載視訊">
+<!ENTITY label.download-mode "下載模式">
+<!ENTITY label.download-mode.normal "同時下載">
+<!ENTITY label.download-mode.onebyone "一個接一個">
+<!ENTITY label.download-mode.flashgot "FlashGot">
+<!ENTITY title.credits "貢獻者">
+<!ENTITY title.general "一般">
+<!ENTITY title.medialink "MediaLink">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "MediaLink 方式藉由從網頁的 HTML 原始碼中尋找可用的下載鏈結來下載檔案">
+<!ENTITY button.add "新增">
+<!ENTITY button.default "預設">
+<!ENTITY button.remove "移除">
+<!ENTITY label.file-extensions "檔案副檔名">
+<!ENTITY title.mediareq "MediaReq">
+<!ENTITY mediareq.description "MediaReq 方式藉由檢查發出的 HTTP 請求來決定是否為媒體檔案">
+<!ENTITY title.support-dev "支援 DownloadHelper 開發">
+<!ENTITY label.donate-not-again "不再提醒">
+<!ENTITY label.donate "捐助">
+<!ENTITY label.cancel "取消">
+<!ENTITY label.congratulations "恭喜！">
+<!ENTITY label.keep-spaces "保留檔案名稱中的空格">
+<!ENTITY title.sites "DownloadHelper 支援的媒體網站">
+<!ENTITY button.sites.close "關閉">
+<!ENTITY button.sites.open "開啟">
+<!ENTITY button.sites.report "報告工作網站">
+<!ENTITY column.sites.name "名稱">
+<!ENTITY column.sites.rating "評分">
+<!ENTITY column.sites.count "評論">
+<!ENTITY column.sites.date "加入日期">
+<!ENTITY column.sites.url "URL">
+<!ENTITY button.site.close "關閉">
+<!ENTITY label.site.name "名稱">
+<!ENTITY caption.site.site "媒體網站">
+<!ENTITY title.site "媒體網站">
+<!ENTITY label.site.url "URL">
+<!ENTITY label.site.date "新增">
+<!ENTITY label.site.rating "評分">
+<!ENTITY label.site.no-rating "還沒有">
+<!ENTITY button.site.check "檢查網站">
+<!ENTITY button.site.comment "新增評論">
+<!ENTITY label.comment.site "網站">
+<!ENTITY title.comment "評論">
+<!ENTITY caption.comment.comment "新增評論">
+<!ENTITY label.comment.author "暱稱">
+<!ENTITY help.comment.author "您的姓名或暱稱">
+<!ENTITY label.comment.title "標題">
+<!ENTITY help.comment.title "評論的標題">
+<!ENTITY label.comment.comment "評論">
+<!ENTITY help.comment.comment "用空行來分段">
+<!ENTITY label.comment.tags "標籤">
+<!ENTITY help.comment.tags "用空格分開相關的標籤 (例如 &apos;新聞 台灣&apos;，或 &apos;成人&apos;)">
+<!ENTITY label.comment.rating "評分">
+<!ENTITY help.comment.rating "0 = 真沒趣，5 = 真棒">
+<!ENTITY button.comment.close "關閉">
+<!ENTITY button.comment.submit "提交評論">
+<!ENTITY label.comment.wait "您的評論已經被提交。請稍候...">
+<!ENTITY title.report "報告可支援網站">
+<!ENTITY caption.report.report "報告一個新的可支援網站">
+<!ENTITY message.report.check-new "請確定這個網站不在網站清單裡">
+<!ENTITY label.report.name "網站名稱">
+<!ENTITY help.report.name "網站的常用名稱，例如 YouTube">
+<!ENTITY label.report.url "網站 URL">
+<!ENTITY help.report.url "網站位址，例如 http://www.youtube.com">
+<!ENTITY label.report.author "您的姓名">
+<!ENTITY help.report.author "報告貢獻者的名字。可以保留空白">
+<!ENTITY label.report.description "描述">
+<!ENTITY help.report.description "關於網站的簡短描述">
+<!ENTITY button.report.submit "提交網站">
+<!ENTITY button.report.close "關閉">
+<!ENTITY label.report.wait "您的網站已經提交。請稍後...">
+<!ENTITY menu.sites "支援的網站">
+<!ENTITY label.sites.list-adult "顯示包含明顯成人內容的網站">
+<!ENTITY label.report.adult "成人內容">
+<!ENTITY label.context-menu "在右鍵選單中顯示">
+<!ENTITY menu.to-sumo "發表視訊到 SUMO.tv">
+<!ENTITY label.enable-plugin-method "啟用外掛簽名方式">
+<!ENTITY label.yt-unmodified-filename "保留 YouTube 檔案名稱 (CJK)">
+<!ENTITY label.disable-dwcount-cookie "停用下載次數 cookie">
+<!ENTITY column.sites.duration "興趣">
+<!ENTITY title.mediaweight "媒體大小限制">
+<!ENTITY label.mediaweight-enabled "啟用媒體大小限制">
+<!ENTITY label.mediaweight-threshold "媒體大小門檻">
+<!ENTITY label.enable-medialink-method "MediaLink 已啟用">
+<!ENTITY mediaweight.description "「媒體大小限制」方式藉由檢查 HTTP 傳回的文件大小來決定是否為媒體檔案">

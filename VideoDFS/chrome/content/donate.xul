@@ -1,0 +1,64 @@
+<?xml version="1.0"?> 
+<!-- *****************************************************************************
+ *            Copyright (c) 2006 Michel Gutierrez. All Rights Reserved.
+ ****************************************************************************** -->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/skin/dwhelper.css" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/content/bindings.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://dwhelper/locale/dwhelper.dtd" >
+
+<dialog id="dwhelper-donate"
+		title="&title.support-dev;"
+        flex="1"
+        ondialogaccept="return doOk();"
+        onload="onLoad()"
+        onunload="onUnload()"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        buttons="accept,cancel"
+        >
+
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/dwhutil.js" />
+
+	<script><![CDATA[
+var pref=Components.classes["@mozilla.org/preferences-service;1"]
+	.getService(Components.interfaces.nsIPrefService).getBranch("dwhelper.");
+
+function onLoad() {
+	try {
+	document.getElementById("download-count").appendChild(document.createTextNode(
+		DWHUtil.getFText("message.just-downloaded",[""+window.arguments[0].count])));
+	document.getElementById("donate-message").appendChild(document.createTextNode(
+		DWHUtil.getText("message.req-donate")));
+	} catch(e) { alert(e); }
+}
+
+function onUnload() {
+	var notAgain=document.getElementById("not-again").checked;
+	if(notAgain)
+		pref.setBoolPref("donate-not-again",true);
+}
+
+function doOk() {
+	window.arguments[0].ok=true;
+}
+
+]]>
+	</script>
+
+
+	<vbox>
+	
+		<description id="congratulations" value="&label.congratulations;"/>
+		
+		<description id="download-count"/>
+
+		<description id="donate-message"/>
+		
+		<checkbox id="not-again" label="&label.donate-not-again;"/>
+	
+	</vbox>
+
+</dialog>

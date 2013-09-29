@@ -1,0 +1,100 @@
+<!ENTITY menu.help "帮助">
+<!ENTITY menu.manual-check "检查 URL">
+<!ENTITY menu.preferences "配置...">
+<!ENTITY menu.about "关于...">
+<!ENTITY label.download-one-by-one "一个一个的下载">
+<!ENTITY label.storagedir "存储目录">
+<!ENTITY button.changedir "更换目录">
+<!ENTITY error.nohome "家目录不存在">
+<!ENTITY error.notadirectory "不是目录">
+<!ENTITY title.preferences "选项">
+<!ENTITY title.about "关于 DownloadHelper">
+<!ENTITY version.name "DownloadHelper">
+<!ENTITY label.menu-http-expiration "菜单项失效时间(ms)">
+<!ENTITY label.icon-animation "图标动画">
+<!ENTITY menu.ytlinks "从 YouTube 链接下载视频">
+<!ENTITY label.download-mode "下载模式">
+<!ENTITY label.download-mode.normal "正常">
+<!ENTITY label.download-mode.onebyone "一个接一个">
+<!ENTITY label.download-mode.flashgot "快速获得">
+<!ENTITY title.credits "贡献者">
+<!ENTITY title.general "常规">
+<!ENTITY title.medialink "MediaLink（媒体链接）">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "MediaLink 方法允许在页面的HTML代码文件中查找可用的下载链接来下载文件">
+<!ENTITY button.add "新增">
+<!ENTITY button.default "默认">
+<!ENTITY button.remove "移除">
+<!ENTITY label.file-extensions "文件扩展">
+<!ENTITY title.mediareq "MediaReq">
+<!ENTITY mediareq.description "MediaReq 方法检查发出的 HTTP 请求是否为媒体文件">
+<!ENTITY title.support-dev "支持 DownloadHelper 开发">
+<!ENTITY label.donate-not-again "不再提醒">
+<!ENTITY label.donate "捐献">
+<!ENTITY label.cancel "取消">
+<!ENTITY label.congratulations "祝贺你！">
+<!ENTITY label.keep-spaces "保留文件名中的空格">
+<!ENTITY title.sites "DownloadHelper 媒体网站">
+<!ENTITY button.sites.close "关闭">
+<!ENTITY button.sites.open "打开">
+<!ENTITY button.sites.report "报告工作网站">
+<!ENTITY column.sites.name "名称">
+<!ENTITY column.sites.rating "评分">
+<!ENTITY column.sites.count "评论">
+<!ENTITY column.sites.date "新增日">
+<!ENTITY column.sites.url "URL">
+<!ENTITY button.site.close "关闭">
+<!ENTITY label.site.name "名称">
+<!ENTITY caption.site.site "媒体网站">
+<!ENTITY title.site "媒体网站">
+<!ENTITY label.site.url "URL">
+<!ENTITY label.site.date "新增">
+<!ENTITY label.site.rating "评价">
+<!ENTITY label.site.no-rating "还没有">
+<!ENTITY button.site.check "检查网站">
+<!ENTITY button.site.comment "添加评价">
+<!ENTITY label.comment.site "网站">
+<!ENTITY title.comment "评论">
+<!ENTITY caption.comment.comment "添加评论">
+<!ENTITY label.comment.author "昵称">
+<!ENTITY help.comment.author "您的名字或昵称">
+<!ENTITY label.comment.title "标题">
+<!ENTITY help.comment.title "评论标题">
+<!ENTITY label.comment.comment "评论">
+<!ENTITY help.comment.comment "空行用来分段">
+<!ENTITY label.comment.tags "Tags(标签)">
+<!ENTITY help.comment.tags "空格分隔的相关 tags (例如 &apos;新闻 中国&apos;，或 &apos;儿童&apos;)">
+<!ENTITY label.comment.rating "评分">
+<!ENTITY help.comment.rating "0 = 真没趣，5 = 真棒">
+<!ENTITY button.comment.close "关闭">
+<!ENTITY button.comment.submit "提交评论">
+<!ENTITY label.comment.wait "您的评论已经提交。请稍候...">
+<!ENTITY title.report "报告工作网站">
+<!ENTITY caption.report.report "报告新工作网站">
+<!ENTITY message.report.check-new "请确保该网站不在网站列表里">
+<!ENTITY label.report.name "网站名称">
+<!ENTITY help.report.name "网站的常用名称，例如 YouTube">
+<!ENTITY label.report.url "网站 URL">
+<!ENTITY help.report.url "网站地址，例如 http://www.youtube.com">
+<!ENTITY label.report.author "您的名字">
+<!ENTITY help.report.author "报告的贡献者名字。可以留空">
+<!ENTITY label.report.description "描述">
+<!ENTITY help.report.description "关于网站的简短描述">
+<!ENTITY button.report.submit "提交站点">
+<!ENTITY button.report.close "关闭">
+<!ENTITY label.report.wait "您的网站已经提交。请稍后...">
+<!ENTITY menu.sites "支持网站">
+<!ENTITY label.sites.list-adult "显示包含成人内容的网站">
+<!ENTITY label.report.adult "成人内容">
+<!ENTITY label.context-menu "在上下文菜单中显示">
+<!ENTITY menu.to-sumo "发表视频到 SUMO.tv">
+<!ENTITY label.enable-plugin-method "启用插件签名方法">
+<!ENTITY label.yt-unmodified-filename "保留 YouTube 文件名 (CJK)">
+<!ENTITY label.disable-dwcount-cookie "禁用下载数量计数器cookie">
+<!ENTITY column.sites.duration "兴趣">
+<!ENTITY title.mediaweight "媒体大小">
+<!ENTITY label.mediaweight-enabled "显示媒体大小">
+<!ENTITY label.mediaweight-threshold "媒体大小限制">
+
+<!ENTITY label.enable-medialink-method "MediaLink enabled">
+<!ENTITY mediaweight.description "The MediaWeight method examines HTTP responses to decide if it is a media file based on the document size">

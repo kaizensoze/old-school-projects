@@ -1,0 +1,332 @@
+<?xml version="1.0"?> 
+<!-- *****************************************************************************
+ *            Copyright (c) 2006 Michel Gutierrez. All Rights Reserved.
+ ****************************************************************************** -->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+<?xml-stylesheet href="chrome://dwhelper/skin/dwhelper.css" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/content/bindings.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://dwhelper/locale/dwhelper.dtd" >
+
+<window id="dwhelper-sites"
+		title="&title.sites;"
+        flex="1"
+        onload="onLoad()"
+        onunload="onUnload()"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        screenX="0"
+        screenY="0"
+        persist="width height screenX screenY sizemode"
+        >
+
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/dwhutil.js" />
+
+	<script><![CDATA[
+
+var Util=Components.classes["@downloadhelper.net/util-service;1"]
+	.getService(Components.interfaces.dhIUtilService);
+var pref=Components.classes["@mozilla.org/preferences-service;1"]
+	.getService(Components.interfaces.nsIPrefService).getBranch("dwhelper.");
+
+var datasource=null;
+
+var pb2=pref.QueryInterface(Components.interfaces.nsIPrefBranch2);
+var observer={
+	observe: function(subject,topic,data) {
+		if(topic=="nsPref:changed" && data=="adult")
+			adultCheck();
+	}
+}
+pb2.addObserver("", observer, false);
+
+function onUnload() {
+	pb2.removeObserver("",observer);
+}
+
+function reportSite() {
+	var wwatch = Components.classes["@mozilla.org/embedcomp/window-watcher;1"].getService().
+		QueryInterface(Components.interfaces.nsIWindowWatcher);
+	var w=wwatch.openWindow(window, "chrome://dwhelper/content/report.xul",
+                 "dwhelper-report-site", "chrome", {});
+	setTimeout(new Function("w","w.focus()"),0,w);
+}
+
+function getSelected() {
+	var t=document.getElementById("dwhelper-media-sites");
+	var selectCount = t.view.selection.count;
+	if(selectCount>0) {
+		var res=t.builderView.getResourceAtIndex(t.currentIndex);
+		return res;
+	}
+	return null;
+}
+
+function updateOpenButton() {
+	var b1=document.getElementById("check-button");
+	var b2=document.getElementById("comment-button");
+	if(getSelected()==null) {
+		b1.setAttribute("hidden","true");
+		b2.setAttribute("hidden","true");
+	} else {
+		b1.setAttribute("hidden","false");
+		b2.setAttribute("hidden","false");
+	}
+}
+
+function addComment() {
+	
+	var wwatch = Components.classes["@mozilla.org/embedcomp/window-watcher;1"].getService().
+		QueryInterface(Components.interfaces.nsIWindowWatcher);
+		
+	var props=Components.classes["@mozilla.org/properties;1"]
+		.createInstance(Components.interfaces.nsIProperties);
+
+	var siteres=getSelected();
+
+	props.set("datasource",datasource);
+	props.set("siteres",siteres);
+		
+	var w=wwatch.openWindow(window, "chrome://dwhelper/content/comment.xul",
+                 "dwhelper-comment", "chrome,minimizable", props);
+	setTimeout(new Function("w","w.focus()"),0,w);
+	
+}
+
+function checkSite() {
+	var siteres=getSelected();
+	var siteId=Util.getPropertyValueRS(datasource,siteres,"http://downloadhelper.net/dwhelper/1.0#id");
+
+	var top=DWHUtil.getTopWindow();
+	if(top) {
+		var browser=top.getBrowser();
+		var tab = browser.addTab("http://www.downloadhelper.net/site.php?site="+siteId);
+		setTimeout(new Function("b","t","b.selectedTab=t;"),0,browser,tab);
+	}
+}
+
+function onLoad() {
+
+	var adult=document.getElementById("adult");
+	var allowAdult=pref.getBoolPref("adult");
+	adult.checked=allowAdult;
+	adultCheck();
+
+	updateOpenButton();
+	var t=document.getElementById("dwhelper-media-sites");
+	datasource=t.database;
+	t.addEventListener("select",updateOpenButton,true);
+	t.addEventListener("dblclick",checkSite,true);
+
+	var x=document.documentElement.getAttribute("screenX");
+	var y=document.documentElement.getAttribute("screenY");
+	window.moveTo(x,y);
+	
+}
+
+function adultCheck() {
+	var filter=document.getElementById("adult-filter");
+	var conditions=document.getElementById("conditions");
+	var allowAdult=pref.getBoolPref("adult");
+	if(allowAdult==true) {
+		if(filter!=null) {
+			filter.parentNode.removeChild(filter);
+			document.getElementById("dwhelper-media-sites").builder.rebuild();
+		}
+	} else {
+		if(filter==null) {
+			filter=document.createElement("triple");
+			filter.setAttribute("id","adult-filter");
+			filter.setAttribute("subject","?site");
+			filter.setAttribute("predicate","http://downloadhelper.net/dwhelper/1.0#adult");
+			filter.setAttribute("object","0");
+			conditions.appendChild(filter);
+			document.getElementById("dwhelper-media-sites").builder.rebuild();
+		}
+	}
+}
+
+function adultCheckCommand() {
+	var button=document.getElementById("adult");
+	if(button.checked) {
+		var o18checked=false;
+		try {
+			o18checked=pref.getBoolPref("checked-adult");
+		} catch(e) {
+		}
+		if(o18checked==false) {
+			if(confirm(Util.getText("message.show-adult"))==false || 
+				confirm(Util.getText("message.checked-adult"))==false) {
+				button.checked=false;
+				return;
+			}
+			pref.setBoolPref("checked-adult",true);
+		}
+	}
+	pref.setBoolPref("adult",button.checked);
+}
+
+]]>
+	</script>
+
+	<vbox id="dwhelper-sites-vbox" flex="1">
+
+		<tree id="dwhelper-media-sites"
+			enableColumnDrag="true" 
+			datasources="http://www.downloadhelper.net/sites.rdf"
+			ref="urn:root"
+			flags="dont-build-content"
+			flex="1"
+			>
+			<treecols>
+				<treecol 
+					id="name"
+					primary="true"
+					label="&column.sites.name;"
+					flex="1"
+					persist="width ordinal hidden sortActive sortDirection"
+					sort="?name"
+					/>
+				<splitter class="tree-splitter"/>
+				<treecol 
+					id="duration"
+					primary="false"
+					label="&column.sites.duration;"
+					flex="1"
+					persist="width ordinal hidden sortActive sortDirection"
+					sortActive="true" sortDirection="descending" 
+					sort="?durationsort"
+					/>
+				<splitter class="tree-splitter"/>
+				<treecol 
+					id="rating"
+					primary="false"
+					label="&column.sites.rating;"
+					flex="1"
+					persist="width ordinal hidden sortActive sortDirection"
+					sortActive="true" sortDirection="descending" 
+					sort="?ratingsort"
+					/>
+				<splitter class="tree-splitter"/>
+				<treecol 
+					id="count"
+					primary="false"
+					label="&column.sites.count;"
+					flex="1"
+					persist="width ordinal hidden"
+					sort="?count"
+					/>
+				<splitter class="tree-splitter"/>
+				<treecol 
+					id="date"
+					primary="false"
+					label="&column.sites.date;"
+					flex="1"
+					persist="width ordinal hidden"
+					sort="?timestamp"
+					/>
+				<splitter class="tree-splitter"/>
+				<treecol 
+					id="url"
+					hidden="true"
+					primary="false"
+					label="&column.sites.url;"
+					flex="1"
+					persist="width ordinal hidden"
+					sort="?url"
+					/>
+			</treecols>
+	
+			<template>
+				<rule>
+					<conditions id="conditions">
+        				<content uri="?root"/>
+						<member container="?root" child="?site"/>
+						<triple id="adult-filter" subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#adult"
+                 			object="0"/>
+					</conditions>
+					<bindings>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#name"
+                 			object="?name"/>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#duration"
+                 			object="?duration"/>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#durationsort"
+                 			object="?durationsort"/>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#rating"
+                 			object="?rating"/>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#ratingsort"
+                 			object="?ratingsort"/>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#timestamp"
+                 			object="?timestamp"/>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#date"
+                 			object="?date"/>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#count"
+                 			object="?count"/>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#url"
+                 			object="?url"/>
+						<binding subject="?site"
+                 			predicate="http://downloadhelper.net/dwhelper/1.0#type"
+                 			object="?type"/>
+      				</bindings>
+      				<action>
+						<treechildren>
+							<treeitem
+								uri="?site" open="true">
+								<treerow>
+									<treecell				
+										label="?name"
+										properties="?type"
+										/>
+									<treecell				
+										label="?duration"
+										/>
+									<treecell				
+										label="?rating"
+										/>
+									<treecell				
+										label="?count"
+										/>
+									<treecell				
+										label="?date"
+										/>
+									<treecell				
+										label="?url"
+										/>
+								</treerow>
+							</treeitem>
+						</treechildren>
+					</action>
+				</rule>
+			</template>
+	
+		</tree>
+		
+		<checkbox id="adult" label="&label.sites.list-adult;" oncommand="adultCheckCommand()"/>
+		
+		<hbox class="dwhelper-button-line">
+			<spacer flex="1"/>
+<!-- 
+			<button label="&button.sites.report;" oncommand="reportSite()"/>
+ -->
+			<button id="check-button" label="&button.site.check;" oncommand="checkSite()" hidden="true"/>
+			<button id="comment-button" label="&button.site.comment;" oncommand="addComment()" hidden="true" />
+<!-- 
+			<button id="open-button" label="&button.sites.open;" hidden="true" oncommand="doOpen()"/>
+ -->
+			<button label="&button.sites.close;" oncommand="window.close()"/>
+		</hbox>
+
+	</vbox>
+	
+</window>

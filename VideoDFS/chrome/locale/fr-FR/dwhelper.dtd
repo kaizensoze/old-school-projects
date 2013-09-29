@@ -1,0 +1,99 @@
+<!ENTITY menu.help "Aide">
+<!ENTITY menu.manual-check "Tester l&apos;URL">
+<!ENTITY menu.preferences "Préférences ...">
+<!ENTITY menu.about "A propos ...">
+<!ENTITY label.download-one-by-one "Télécharger un par un">
+<!ENTITY label.storagedir "Répertoire de stockage">
+<!ENTITY button.changedir "Changer le répertoire">
+<!ENTITY error.nohome "Le répertoire utilisateur n&apos;existe pas">
+<!ENTITY error.notadirectory "n&apos;est pas un répertoire">
+<!ENTITY title.preferences "Préférences">
+<!ENTITY title.about "A propos de DownloadHelper">
+<!ENTITY version.name "DownloadHelper">
+<!ENTITY label.menu-http-expiration "Durée d&apos;entrée dans le menu (ms)">
+<!ENTITY label.icon-animation "Animation de l&apos;icone">
+<!ENTITY menu.ytlinks "Télécharger les vidéos depuis le(s) lien(s) YouTube">
+<!ENTITY label.download-mode "Mode de téléchargement">
+<!ENTITY label.download-mode.normal "Normal">
+<!ENTITY label.download-mode.onebyone "Un par un">
+<!ENTITY label.download-mode.flashgot "FlashGot">
+<!ENTITY title.credits "Crédits">
+<!ENTITY title.general "Général">
+<!ENTITY title.medialink "MediaLink">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "La méthode MediaLink permet de télécharger des fichiers depuis une page en examinant les liens HTML">
+<!ENTITY button.add "Ajouter">
+<!ENTITY button.default "Défaut">
+<!ENTITY button.remove "Supprimer">
+<!ENTITY label.file-extensions "Extensions des fichiers">
+<!ENTITY title.mediareq "MediaReq">
+<!ENTITY mediareq.description "La méthode MediaReq examine les requêtes HTTP sortantes pour déterminer s&apos;il s&apos;agit d&apos;un fichier média">
+<!ENTITY title.support-dev "Supportez le développement de DownloadHelper">
+<!ENTITY label.donate-not-again "Ne m&apos;ennuyez plus avec ça">
+<!ENTITY label.donate "Donner">
+<!ENTITY label.cancel "Annuler">
+<!ENTITY label.congratulations "Félicitations !">
+<!ENTITY label.keep-spaces "Conserver les espaces dans les noms de fichier">
+<!ENTITY title.sites "Sites Média DownloadHelper">
+<!ENTITY button.sites.close "Fermer">
+<!ENTITY button.sites.open "Ouvrir">
+<!ENTITY button.sites.report "Notifier site compatible">
+<!ENTITY column.sites.name "Nom">
+<!ENTITY column.sites.rating "Note">
+<!ENTITY column.sites.count "Commentaires">
+<!ENTITY column.sites.date "Date de création">
+<!ENTITY column.sites.url "URL">
+<!ENTITY button.site.close "Fermer">
+<!ENTITY label.site.name "Nom">
+<!ENTITY caption.site.site "Site média">
+<!ENTITY title.site "Site média">
+<!ENTITY label.site.url "URL">
+<!ENTITY label.site.date "Création">
+<!ENTITY label.site.rating "Note">
+<!ENTITY label.site.no-rating "Aucun pour l&apos;instant">
+<!ENTITY button.site.check "Voir le site">
+<!ENTITY button.site.comment "Ajouter un commentaire">
+<!ENTITY label.comment.site "Site">
+<!ENTITY title.comment "Commentaire">
+<!ENTITY caption.comment.comment "Ajouter un commentaire">
+<!ENTITY label.comment.author "Pseudo">
+<!ENTITY help.comment.author "Votre nom ou pseudo">
+<!ENTITY label.comment.title "Titre">
+<!ENTITY help.comment.title "Le titre du commentaire">
+<!ENTITY label.comment.comment "Commentaire">
+<!ENTITY help.comment.comment "Lignes vides pour séparer les paragraphes">
+<!ENTITY label.comment.tags "Mots clés">
+<!ENTITY help.comment.tags "Mots clés séparés par des espaces (p.ex. &apos;news indian&apos;, or &apos;adult&apos;)">
+<!ENTITY label.comment.rating "Note">
+<!ENTITY help.comment.rating "0 = strictement aucun intérêt, 5 = super site">
+<!ENTITY button.comment.close "Fermer">
+<!ENTITY button.comment.submit "Soumettre le commentaire">
+<!ENTITY label.comment.wait "Votre commentaire est en train d&apos;être soumis. Merci de patienter ...">
+<!ENTITY title.report "Notification de site compatible">
+<!ENTITY caption.report.report "Notifier un nouveau site compatible">
+<!ENTITY message.report.check-new "Merci de vous assurer que ce site n&apos;existe pas dans la liste des sites">
+<!ENTITY label.report.name "Nom du site">
+<!ENTITY help.report.name "Nom général du site, p.ex. YouTube">
+<!ENTITY label.report.url "URL du site">
+<!ENTITY help.report.url "L&apos;adresse du site, p.ex. http://www.youtube.com">
+<!ENTITY label.report.author "Votre nom">
+<!ENTITY help.report.author "Le nom auquel attribuer la notification. Vous pouvez laisser vide">
+<!ENTITY label.report.description "Description">
+<!ENTITY help.report.description "Une courte description de ce qui peut être trouvé sur le site">
+<!ENTITY button.report.submit "Proposer le site">
+<!ENTITY button.report.close "Fermer">
+<!ENTITY label.report.wait "Votre site a été soumis. Merci de patienter ...">
+<!ENTITY menu.sites "Sites supportés">
+<!ENTITY label.sites.list-adult "Voir les sites avec du contenu pour adultes directement accessible">
+<!ENTITY label.report.adult "Contenu pour adultes directement accessible">
+<!ENTITY label.context-menu "Afficher dans le menu contextuel">
+<!ENTITY menu.to-sumo "Poster une vidéo vers SUMO.tv">
+<!ENTITY label.enable-plugin-method "Autoriser la méthode de signature des plugins">
+<!ENTITY label.yt-unmodified-filename "Préserver les noms de fichiers sous YouTube (CJK)">
+<!ENTITY label.disable-dwcount-cookie "Bloquer le cookie du nombre de téléchargements">
+<!ENTITY column.sites.duration "Intérêt">
+<!ENTITY title.mediaweight "MediaWeight">
+<!ENTITY label.mediaweight-enabled "Utiliser MediaWeight">
+<!ENTITY label.mediaweight-threshold "Taille minimum">
+<!ENTITY label.enable-medialink-method "Utiliser MediaLink">
+<!ENTITY mediaweight.description "La méthode MediaWeight examine les réponses HTTP pour déterminer s&apos;il s&apos;agit d&apos;un fichier média à partir de la taille du document">

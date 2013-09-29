@@ -1,0 +1,121 @@
+<!ENTITY menu.help "Help">
+<!ENTITY menu.manual-check "Check URL">
+<!ENTITY menu.preferences "Preferences ...">
+<!ENTITY menu.about "About ...">
+<!ENTITY label.download-one-by-one "Download one by one">
+<!ENTITY label.storagedir "Storage directory">
+<!ENTITY button.changedir "Change directory">
+<!ENTITY error.nohome "Home directory does not exist">
+<!ENTITY error.notadirectory "is not a directory">
+<!ENTITY title.preferences "Preferences">
+<!ENTITY title.about "About DownloadHelper">
+<!ENTITY version.name "DownloadHelper">
+
+<!ENTITY label.menu-http-expiration "Menu entry expiration (ms)">
+<!ENTITY label.icon-animation "Icon animation">
+<!ENTITY menu.ytlinks "Download videos from YouTube link(s)">
+
+<!ENTITY label.download-mode "Download mode">
+<!ENTITY label.download-mode.normal "Normal">
+<!ENTITY label.download-mode.onebyone "One by one">
+<!ENTITY label.download-mode.flashgot "FlashGot">
+
+<!ENTITY title.credits "Credits">
+<!ENTITY title.general "General">
+<!ENTITY title.medialink "MediaLink">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "The MediaLink method allows to download files from a page by looking at HTML links">
+
+<!ENTITY button.add "Add">
+<!ENTITY button.default "Default">
+<!ENTITY button.remove "Remove">
+
+<!ENTITY label.file-extensions "File extensions">
+<!ENTITY title.mediareq "MediaReq">
+<!ENTITY mediareq.description "The MediaReq method examines outgoing HTTP requests to decide if it is a media file">
+
+<!ENTITY title.support-dev "Support DownloadHelper development">
+<!ENTITY label.donate-not-again "Don't bother me with that again">
+<!ENTITY label.donate "Donate">
+<!ENTITY label.cancel "Cancel">
+<!ENTITY label.congratulations "Congratulations !">
+
+<!ENTITY label.keep-spaces "Keep spaces in file names">
+
+
+
+<!ENTITY title.sites "DownloadHelper Media Sites">
+<!ENTITY button.sites.close "Close">
+<!ENTITY button.sites.open "Open">
+<!ENTITY button.sites.report "Report working site">
+<!ENTITY column.sites.name "Name">
+<!ENTITY column.sites.rating "Rating">
+<!ENTITY column.sites.count "Comments">
+<!ENTITY column.sites.date "Date added">
+<!ENTITY column.sites.url "URL">
+
+<!ENTITY button.site.close "Close">
+<!ENTITY label.site.name "Name">
+<!ENTITY caption.site.site "Media site">
+<!ENTITY title.site "Media site">
+<!ENTITY label.site.url "URL">
+<!ENTITY label.site.date "Added">
+<!ENTITY label.site.rating "Rating">
+<!ENTITY label.site.no-rating "None yet">
+<!ENTITY button.site.check "Check site">
+<!ENTITY button.site.comment "Add comment">
+
+<!ENTITY label.comment.site "Site">
+<!ENTITY title.comment "Comment">
+<!ENTITY caption.comment.comment "Add a comment">
+<!ENTITY label.comment.author "Nickname">
+<!ENTITY help.comment.author "Your name or nick">
+<!ENTITY label.comment.title "Title">
+<!ENTITY help.comment.title "The title of the comment">
+<!ENTITY label.comment.comment "Comment">
+<!ENTITY help.comment.comment "Blank lines to separate paragraphs">
+<!ENTITY label.comment.tags "Tags">
+<!ENTITY help.comment.tags "Space-separated relevant tags (e.g. 'news indian', or 'adult')">
+<!ENTITY label.comment.rating "Rating">
+<!ENTITY help.comment.rating "0 = strictly no interest, 5 = great site">
+<!ENTITY button.comment.close "Close">
+<!ENTITY button.comment.submit "Submit comment">
+<!ENTITY label.comment.wait "Your comment is being submitted. Please wait ...">
+
+<!ENTITY title.report "Report working site">
+<!ENTITY caption.report.report "Report a new working site">
+<!ENTITY message.report.check-new "Please make sure this site does not exist on the sites list">
+<!ENTITY label.report.name "Site name">
+<!ENTITY help.report.name "Common name for the site, e.g. YouTube">
+<!ENTITY label.report.url "Site URL">
+<!ENTITY help.report.url "The address of the site, e.g http://www.youtube.com">
+<!ENTITY label.report.author "Your name">
+<!ENTITY help.report.author "The name for the credit of the report. You can leave blank">
+<!ENTITY label.report.description "Description">
+<!ENTITY help.report.description "A short description of what can be found on this site">
+<!ENTITY button.report.submit "Submit site">
+<!ENTITY button.report.close "Close">
+<!ENTITY label.report.wait "Your site is being submitted. Please wait ...">
+
+<!ENTITY menu.sites "Supported sites">
+
+<!ENTITY label.sites.list-adult "Show sites with directly accessible adult content">
+<!ENTITY label.report.adult "Adult content directly accessible">
+
+<!ENTITY label.context-menu "Display in context menu">
+
+<!ENTITY menu.to-sumo "Post video to SUMO.tv">
+
+<!ENTITY label.enable-plugin-method "Enable plugin signature method">
+<!ENTITY label.yt-unmodified-filename "Preserve YouTube file names (CJK)">
+
+<!ENTITY label.disable-dwcount-cookie "Disable download count cookie">
+
+<!ENTITY column.sites.duration "Interest">
+
+<!ENTITY title.mediaweight "MediaWeight">
+<!ENTITY label.mediaweight-enabled "MediaWeight enabled">
+<!ENTITY label.mediaweight-threshold "Media size threshold">
+
+<!ENTITY label.enable-medialink-method "MediaLink enabled">
+<!ENTITY mediaweight.description "The MediaWeight method examines HTTP responses to decide if it is a media file based on the document size">

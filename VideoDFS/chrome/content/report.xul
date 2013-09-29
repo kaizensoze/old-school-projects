@@ -1,0 +1,172 @@
+<?xml version="1.0"?> 
+<!-- *****************************************************************************
+ *            Copyright (c) 2006 Michel Gutierrez. All Rights Reserved.
+ ****************************************************************************** -->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/skin/dwhelper.css" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/content/bindings.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://dwhelper/locale/dwhelper.dtd" >
+
+<window id="dwhelper-report"
+		title="&title.report;"
+        flex="1"
+        onload="onLoad()"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        persist="screenX screenY"
+        >
+
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/dwhutil.js" />
+
+	<script><![CDATA[
+
+var Util=Components.classes["@downloadhelper.net/util-service;1"]
+	.getService(Components.interfaces.dhIUtilService);
+
+function onLoad() {
+	var x=document.documentElement.getAttribute("screenX");
+	var y=document.documentElement.getAttribute("screenY");
+	window.moveTo(x,y);
+	document.getElementById("name").focus();
+}
+
+function submitSite() {
+	var nameField=document.getElementById("name");
+	var urlField=document.getElementById("url");
+	var authorField=document.getElementById("author");
+	var descriptionField=document.getElementById("description");
+	var adult=document.getElementById("adult");
+	
+	var name=nameField.value;
+	if(name.length==0) {
+		alert(Util.getText("error.report.name-too-short"));
+		nameField.focus();
+		return;
+	}
+	var url=urlField.value;
+	if(url.length==0) {
+		alert(Util.getText("error.report.url-too-short"));
+		urlField.focus();
+		return;
+	}
+	var author=authorField.value;
+	var description=descriptionField.value;
+	if(description.length<128) {
+		alert(Util.getText("error.report.description-too-short"));
+		descriptionField.focus();
+		return;
+	}
+	
+	var obj={
+		site: name,
+		url: url,
+		description: description,
+		author: author,
+		adult: adult.checked?"1":"0",
+		verif: "true"
+	};
+	
+	var body=DWHUtil.urlEncodeObject(obj);
+		
+	var cb=function(status,req,args) {
+		if(status==false) {
+			alert(Util.getText("error.report.connection"));
+		} else {
+			//alert(Util.getText("message.report.success"));
+		}
+		window.close();
+		window.location="about:blank"; // !!! mandatory to actually close the window on windows
+	}
+	
+	DWHUtil.loadAsync("http://www.downloadhelper.net/report.php",cb,{ window: window.self },body,"POST", 
+		{ contentType: "application/x-www-form-urlencoded" });
+
+	document.getElementById("main-panel").setAttribute("hidden","true");
+	document.getElementById("dwhelper-wait-panel").setAttribute("hidden","false");
+	setTimeout(function() {window.sizeToContent();},0);
+}
+
+]]>
+	</script>
+	
+	<vbox>
+
+	<vbox id="main-panel">
+				
+		<groupbox>
+			<caption label="&caption.report.report;"/>
+			
+			<description>&message.report.check-new;</description>
+			
+			<grid id="dwhelper-add-report">
+				<columns>
+					<column/>
+					<column flex="1"/>
+				</columns>
+				<rows>
+					<row>
+						<label value="&label.report.name;"/>
+						<vbox>
+							<textbox id="name"/>
+							<description>&help.report.name;</description>
+						</vbox>
+					</row>
+					<row>
+						<label value="&label.report.url;"/>
+						<vbox>
+							<textbox id="url"/>
+							<description>&help.report.url;</description>
+						</vbox>
+					</row>
+					<row>
+						<label value="&label.report.author;"/>
+						<vbox>
+							<textbox id="author"/>
+							<description>&help.report.author;</description>
+						</vbox>
+					</row>
+					<row>
+						<label value="&label.report.description;"/>
+						<vbox>
+							<textbox id="description" multiline="true" rows="5"/>
+							<description>&help.report.description;</description>
+						</vbox>
+					</row>
+					<row>
+						<spacer/>
+						<checkbox id="adult" label="&label.report.adult;"/>
+					</row>
+				</rows>
+			</grid>
+
+			<hbox class="dwhelper-button-line">
+				<spacer flex="1"/>
+				<button label="&button.report.submit;" oncommand="submitSite()"/>
+				<button id="close-but" label="&button.report.close;" oncommand="window.close()"/>
+			</hbox>
+
+		</groupbox>
+			
+	</vbox>
+	
+	<vbox id="dwhelper-wait-panel" hidden="true">
+		<spacer flex="1"/>
+		<hbox>
+			<spacer flex="1"/>
+			<label value="&label.report.wait;"/>
+			<spacer flex="1"/>
+		</hbox>
+		<spacer flex="1"/>
+		<hbox>
+			<spacer flex="1"/>
+			<image class="waiter" src="chrome://dwhelper/skin/dwhelper24-anim.gif"/>
+			<spacer flex="1"/>
+		</hbox>
+		<spacer flex="1"/>
+	</vbox>
+	
+	</vbox>
+
+</window>

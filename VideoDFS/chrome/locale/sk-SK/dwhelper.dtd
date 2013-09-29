@@ -1,0 +1,99 @@
+<!ENTITY menu.help "Pomocník">
+<!ENTITY menu.manual-check "Skontrolovať adresu">
+<!ENTITY menu.preferences "Predvoľby...">
+<!ENTITY menu.about "Čo je...">
+<!ENTITY label.download-one-by-one "Prevziať po jednom">
+<!ENTITY label.storagedir "Priečinok na ukladanie">
+<!ENTITY button.changedir "Zmeniť priečinok">
+<!ENTITY error.nohome "Domovský priečinok neexistuje">
+<!ENTITY error.notadirectory "nie je priečinok">
+<!ENTITY title.preferences "Predvoľby">
+<!ENTITY title.about "O rozšírení DownloadHelper">
+<!ENTITY version.name "DownloadHelper">
+<!ENTITY label.menu-http-expiration "Čas. limit položky ponuky (ms)">
+<!ENTITY label.icon-animation "Animácia ikony">
+<!ENTITY menu.ytlinks "Prevziať videá z adries YouTube">
+<!ENTITY label.download-mode "Režim preberania">
+<!ENTITY label.download-mode.normal "Normálne">
+<!ENTITY label.download-mode.onebyone "Po jednom">
+<!ENTITY label.download-mode.flashgot "FlashGot">
+<!ENTITY title.credits "Tvorcovia">
+<!ENTITY title.general "Všeobecné">
+<!ENTITY title.medialink "MediaLink">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "Metóda MediaLink umožňuje preberať súbory zo stránky prezeraním prepojení HTML.">
+<!ENTITY button.add "Pridať">
+<!ENTITY button.default "Predvolené">
+<!ENTITY button.remove "Odstrániť">
+<!ENTITY label.file-extensions "Prípony súborov">
+<!ENTITY title.mediareq "MediaReq">
+<!ENTITY mediareq.description "Metóda MediaReq kontroluje odchádzajúce požiadavky HTTP a určí, či ide o mediálny súbor.">
+<!ENTITY title.support-dev "Podpora vývoja rozšírenia DownloadHelper">
+<!ENTITY label.donate-not-again "Nabudúce nezobrazovať">
+<!ENTITY label.donate "Darovať">
+<!ENTITY label.cancel "Zrušiť">
+<!ENTITY label.congratulations "Blahoželáme!">
+<!ENTITY label.keep-spaces "Ponechať v názvoch súborov medzery">
+<!ENTITY title.sites "DownloadHelper – Stránky s médiami">
+<!ENTITY button.sites.close "Zavrieť">
+<!ENTITY button.sites.open "Otvoriť">
+<!ENTITY button.sites.report "Ohlásiť fungujúcu stránku">
+<!ENTITY column.sites.name "Názov">
+<!ENTITY column.sites.rating "Hodnotenie">
+<!ENTITY column.sites.count "Komentáre">
+<!ENTITY column.sites.date "Dátum pridania">
+<!ENTITY column.sites.url "Adresa">
+<!ENTITY button.site.close "Zavrieť">
+<!ENTITY label.site.name "Názov">
+<!ENTITY caption.site.site "Stránka s médiami">
+<!ENTITY title.site "Stránka s médiami">
+<!ENTITY label.site.url "Adresa">
+<!ENTITY label.site.date "Pridané">
+<!ENTITY label.site.rating "Hodnotenie">
+<!ENTITY label.site.no-rating "Zatiaľ žiadne">
+<!ENTITY button.site.check "Skontrolovať stránku">
+<!ENTITY button.site.comment "Pridať komentár">
+<!ENTITY label.comment.site "Stránka">
+<!ENTITY title.comment "Komentár">
+<!ENTITY caption.comment.comment "Pridať komentár">
+<!ENTITY label.comment.author "Prezývka">
+<!ENTITY help.comment.author "Vaše meno alebo prezývka">
+<!ENTITY label.comment.title "Názov">
+<!ENTITY help.comment.title "Názov komentára">
+<!ENTITY label.comment.comment "Komentár">
+<!ENTITY help.comment.comment "Odseky oddeľte prázdnymi riadkami">
+<!ENTITY label.comment.tags "Značky">
+<!ENTITY help.comment.tags "Medzerami oddelené príslušné značky (napr. &apos;news indian&apos; alebo &apos;adult&apos;)">
+<!ENTITY label.comment.rating "Hodnotenie">
+<!ENTITY help.comment.rating "0 = nezaujímavé, 5 = výborná stránka">
+<!ENTITY button.comment.close "Zavrieť">
+<!ENTITY button.comment.submit "Odoslať komentár">
+<!ENTITY label.comment.wait "Komentár sa odosiela. Čakajte prosím...">
+<!ENTITY title.report "Ohlásiť fungujúcu stránku">
+<!ENTITY caption.report.report "Ohlásiť novú fungujúcu stránku">
+<!ENTITY message.report.check-new "Skontrolujte, či už nie je táto stránka v zozname">
+<!ENTITY label.report.name "Názov stránky">
+<!ENTITY help.report.name "Všeobecný názov stránky, napr. YouTube">
+<!ENTITY label.report.url "Adresa stránky">
+<!ENTITY help.report.url "Adresa stránky, napr. http://www.youtube.com">
+<!ENTITY label.report.author "Vaše meno">
+<!ENTITY help.report.author "Meno autora tohto hlásenia. Môžete nechať aj prázdne.">
+<!ENTITY label.report.description "Popis">
+<!ENTITY help.report.description "Krátky popis toho, čo možno na tejto stránke nájsť">
+<!ENTITY button.report.submit "Odoslať stránku">
+<!ENTITY button.report.close "Zavrieť">
+<!ENTITY label.report.wait "Stránka sa odosiela. Čakajte prosím...">
+<!ENTITY menu.sites "Podporované stránky">
+<!ENTITY label.sites.list-adult "Zobraziť stránky s priamo prístupným obsahom pre dospelých">
+<!ENTITY label.report.adult "Priamo prístupný obsah pre dospelých">
+<!ENTITY label.context-menu "Zobraziť v kontextovej ponuke">
+<!ENTITY menu.to-sumo "Odoslať video na SUMO.tv">
+<!ENTITY label.enable-plugin-method "Povoliť spôsob podpisu zásuvného modulu">
+<!ENTITY label.yt-unmodified-filename "Ponechať názvy súborov podľa YouTube (CJK)">
+<!ENTITY label.disable-dwcount-cookie "Zakázať súbor cookie s počítadlom prevzatí">
+<!ENTITY column.sites.duration "Záujem">
+<!ENTITY title.mediaweight "MediaWeight">
+<!ENTITY label.mediaweight-enabled "MediaWeight povolené">
+<!ENTITY label.mediaweight-threshold "Limitná veľkosť média">
+<!ENTITY label.enable-medialink-method "MediaLink povolené">
+<!ENTITY mediaweight.description "Metóda MediaWeight skúša odozvy HTTP a rozhoduje na základe veľkosti, či ide o mediálny súbor.">

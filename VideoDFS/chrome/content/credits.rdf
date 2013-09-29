@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dwh="http://downloadhelper.net/dwhelper/1.0#">
+
+<RDF:Seq about="urn:root">
+        <RDF:li resource="mig"/>
+        <RDF:li resource="dp"/>
+        <RDF:li resource="az"/>
+        <RDF:li resource="lp"/>
+        <RDF:li resource="kb"/>
+        <RDF:li resource="ala"/>
+</RDF:Seq>
+
+<RDF:Description about="mig">
+	<dwh:Name>Michel Gutierrez</dwh:Name>
+	<dwh:Job>Programming</dwh:Job>
+</RDF:Description>
+
+<RDF:Description about="dp">
+	<dwh:Name>David Pistori</dwh:Name>
+	<dwh:Job>Visuals</dwh:Job>
+</RDF:Description>
+
+<RDF:Description about="az">
+	<dwh:Name>Aqeel Zafar</dwh:Name>
+	<dwh:Job>Testing</dwh:Job>
+</RDF:Description>
+
+<RDF:Description about="kb">
+	<dwh:Name>Kevin Bahrt</dwh:Name>
+	<dwh:Job>Testing</dwh:Job>
+</RDF:Description>
+
+<RDF:Description about="lp">
+	<dwh:Name>Larry PK</dwh:Name>
+	<dwh:Job>Testing</dwh:Job>
+</RDF:Description>
+
+<RDF:Description about="ala">
+	<dwh:Name>Airam Lozano Alonso</dwh:Name>
+	<dwh:Job>Testing</dwh:Job>
+</RDF:Description>
+
+</RDF:RDF>

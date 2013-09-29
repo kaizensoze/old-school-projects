@@ -1,0 +1,391 @@
+<?xml version="1.0"?> 
+<!-- *****************************************************************************
+ *            Copyright (c) 2006 Michel Gutierrez. All Rights Reserved.
+ ****************************************************************************** -->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/skin/dwhelper.css" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/content/bindings.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://dwhelper/locale/dwhelper.dtd" >
+
+<dialog id="dwhelper-preferences"
+		title="Preferences"
+        flex="1"
+        ondialogaccept="return doOk();"
+        onload="onLoad()"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        buttons="accept,cancel"
+        >
+
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/dwhutil.js" />
+
+	<script><![CDATA[
+var pref=Components.classes["@mozilla.org/preferences-service;1"]
+	.getService(Components.interfaces.nsIPrefService).getBranch("dwhelper.");
+
+function onLoad() {
+	var ia=true;
+	try {
+		ia=pref.getBoolPref("icon-animation");
+	} catch(e) {
+	}
+	document.getElementById("dwhelper-iconanimation").checked=ia;
+
+	var epm=true;
+	try {
+		epm=pref.getBoolPref("enable-plugins-method");
+	} catch(e) {
+	}
+	document.getElementById("dwhelper-enablepluginmethod").checked=epm;
+	
+	var emlm=true;
+	try {
+		emlm=pref.getBoolPref("enable-medialink-method");
+	} catch(e) {
+	}
+	document.getElementById("dwhelper-enablemedialinkmethod").checked=emlm;
+	
+	var yuf=false;
+	try {
+		yuf=pref.getBoolPref("yt-unmodified-filename");
+	} catch(e) {
+	}
+	document.getElementById("dwhelper-ytunmodifiedfilename").checked=yuf;
+	
+	var cm=true;
+	try {
+		cm=pref.getBoolPref("context-menu");
+	} catch(e) {
+	}
+	document.getElementById("context-menu").checked=cm;
+
+	var dcc=false;
+	try {
+		dcc=pref.getBoolPref("disable-dwcount-cookie");
+	} catch(e) {
+	}
+	document.getElementById("disable-dwcount-cookie").checked=dcc;
+
+	var stdir="";
+	try {
+		stdir=pref.getCharPref("storagedirectory");
+	} catch(e) {
+	}
+	document.getElementById("dwhelper-storagedir").value=stdir;
+	var expiration="60000";
+	try {
+		expiration=""+pref.getIntPref("menu-http-expiration");
+	} catch(e) {}
+	document.getElementById("dwhelper-menuhttpexpiration").value=expiration;
+	
+	var flashGot=DWHUtil.getFlashGot();
+	var flashGotOption=document.getElementById("dwhelper-download-flashgot");
+	if(flashGot==null)
+		flashGotOption.setAttribute("hidden","true");
+	else
+		flashGotOption.setAttribute("hidden","false");
+	var downloadMode=DWHUtil.getDownloadMode(pref);
+	document.getElementById("dwhelper-download-mode").value=downloadMode;
+	
+	var mlElem=document.getElementById("dwhelper-medialink-exts");
+	var mlExts=null;
+	try {
+		mlExts=pref.getCharPref("medialink-extensions");
+	} catch(e) {
+	}
+	if(mlExts==null || mlExts=="")
+		mlElem.setDefault();
+	else
+		mlElem.setData(mlExts);
+
+	var mrElem=document.getElementById("dwhelper-mediareq-exts");
+	var mrExts=null;
+	try {
+		mrExts=pref.getCharPref("mediareq-extensions");
+	} catch(e) {
+	}
+	if(mrExts==null || mrExts=="")
+		mrElem.setDefault();
+	else
+		mrElem.setData(mrExts);
+	/*
+	var ks=false;
+	try {
+		ks=pref.getBoolPref("yt-keep-spaces");
+	} catch(e) {
+	}
+	document.getElementById("yt-keep-spaces").checked=ks;
+	*/
+	
+	var mwe=true;
+	try {
+		mwe=pref.getBoolPref("mediaweight-enabled");
+	} catch(e) {
+	}
+	document.getElementById("mediaweight-enabled").checked=mwe;
+
+	var mwt=1024*1024;
+	try {
+		mwt=pref.getIntPref("mediaweight-threshold");
+	} catch(e) {
+	}
+	document.getElementById("mediaweight-threshold").value=mwt;
+
+	updateMediaWeight();
+	updateMediaLink();
+
+}
+
+function doOk() {
+	pref.setBoolPref("icon-animation",
+		document.getElementById("dwhelper-iconanimation").checked);
+	pref.setBoolPref("enable-plugins-method",
+		document.getElementById("dwhelper-enablepluginmethod").checked);
+	pref.setBoolPref("enable-medialink-method",
+		document.getElementById("dwhelper-enablemedialinkmethod").checked);
+	pref.setBoolPref("yt-unmodified-filename",
+		document.getElementById("dwhelper-ytunmodifiedfilename").checked);
+	pref.setBoolPref("context-menu",
+		document.getElementById("context-menu").checked);
+	var dcc=document.getElementById("disable-dwcount-cookie").checked;
+	pref.setBoolPref("disable-dwcount-cookie",dcc);
+	if(dcc==true) {
+		DWHUtil.removeCookie("dwcount");
+	} else {
+		DWHUtil.setDWCountCookie(pref);
+	}
+	pref.setCharPref("storagedirectory",
+		document.getElementById("dwhelper-storagedir").value);
+	pref.setCharPref("download-mode",
+		document.getElementById("dwhelper-download-mode").value);
+	var expiration=60000;
+	try {
+		expiration=parseInt(document.getElementById("dwhelper-menuhttpexpiration").value);
+	} catch(e) {
+	}
+	if(isNaN(expiration))
+		expiration=60000;
+	pref.setIntPref("menu-http-expiration",expiration);
+	var mlElem=document.getElementById("dwhelper-medialink-exts");
+	pref.setCharPref("medialink-extensions",mlElem.getData());
+	var mrElem=document.getElementById("dwhelper-mediareq-exts");
+	pref.setCharPref("mediareq-extensions",mrElem.getData());
+	/*
+	pref.setBoolPref("yt-keep-spaces",
+		document.getElementById("yt-keep-spaces").checked);
+	*/
+	pref.setBoolPref("mediaweight-enabled",document.getElementById("mediaweight-enabled").checked);
+	var mwt=parseInt(document.getElementById("mediaweight-threshold").value);
+	if(isNaN(mwt))
+		pref.setIntPref("mediaweight-threshold",1024*1024);
+	else
+		pref.setIntPref("mediaweight-threshold",mwt);
+}
+
+function changeStorageDir() {
+	try {
+	var nsIFilePicker = Components.interfaces.nsIFilePicker;
+	var fp = Components.classes["@mozilla.org/filepicker;1"]
+	        .createInstance(nsIFilePicker);
+	fp.init(window, DWHUtil.getText("prompt.select-storage-dir"), nsIFilePicker.modeGetFolder);
+	var res=null;
+	res = fp.show();
+	if (res == nsIFilePicker.returnOK){
+	  	var thefile = fp.file;
+		document.getElementById("dwhelper-storagedir").value=thefile.path;
+	}
+	} catch(e) {
+	}
+}
+
+function updateMediaWeight() {
+	var mwe=document.getElementById("mediaweight-enabled").checked;
+	document.getElementById("bc-mediaweight").setAttribute("hidden",""+!mwe);
+	setTimeout(function(w) { w.sizeToContent(); },0,window);
+}
+
+function updateMediaLink() {
+	var mle=document.getElementById("dwhelper-enablemedialinkmethod").checked;
+	document.getElementById("bc-medialink").setAttribute("hidden",""+!mle);
+	setTimeout(function(w) { w.sizeToContent(); },0,window);
+}
+
+]]>
+	</script>
+	
+	<broadcasters>
+		<broadcaster id="bc-mediaweight" hidden="true"/>
+		<broadcaster id="bc-medialink" hidden="true"/>
+	</broadcasters>
+		
+
+	<tabbox flex="1" style="width: 400px;">
+		<tabs>
+			<tab class="dwhelper-tab" label="&title.general;" image="chrome://dwhelper/skin/dwhelper.png"/>
+<!-- 
+			<tab class="dwhelper-tab" label="&title.youtube;" image="http://www.youtube.com/favicon.ico" hidden="true"/>
+ -->
+			<tab class="dwhelper-tab" label="&title.medialink;" image="chrome://dwhelper/skin/medialink.gif"/>
+			<tab class="dwhelper-tab" label="&title.mediareq;" image="chrome://dwhelper/skin/mediareq.gif"/>
+			<tab class="dwhelper-tab" label="&title.mediaweight;" image="chrome://dwhelper/skin/mediaweight.gif"/>
+		</tabs>
+		<tabpanels flex="1">
+			<tabpanel>
+				<grid flex="1">
+					<columns>
+						<column/>	
+						<column/>	
+						<column flex="1"/>
+					</columns>
+					<rows>
+						<row align="center">
+							<label value="&label.download-mode;"/>
+							<menulist id="dwhelper-download-mode">
+								<menupopup>
+									<menuitem label="&label.download-mode.normal;" value="normal" id="dwhelper-download-normal"/>
+									<menuitem label="&label.download-mode.onebyone;" value="onebyone" id="dwhelper-download-onebyone"/>
+									<menuitem label="&label.download-mode.flashgot;" value="flashgot" id="dwhelper-download-flashgot"/>
+								</menupopup>
+							</menulist>
+						</row>
+						<row align="center">
+							<label value="&label.icon-animation;"/>
+							<hbox>
+								<html:input type="checkbox" id="dwhelper-iconanimation"/>
+								<spacer flex="1"/>
+							</hbox>
+						</row>
+						<row align="center">
+							<label value="&label.disable-dwcount-cookie;"/>
+							<hbox>
+								<html:input type="checkbox" id="disable-dwcount-cookie"/>
+								<spacer flex="1"/>
+							</hbox>
+						</row>
+						<row align="center">
+							<label value="&label.enable-plugin-method;"/>
+							<hbox>
+								<html:input type="checkbox" id="dwhelper-enablepluginmethod"/>
+								<spacer flex="1"/>
+							</hbox>
+						</row>
+						<row align="center">
+							<label value="&label.yt-unmodified-filename;"/>
+							<hbox>
+								<html:input type="checkbox" id="dwhelper-ytunmodifiedfilename"/>
+								<spacer flex="1"/>
+							</hbox>
+						</row>
+						<row align="center">
+							<label value="&label.context-menu;"/>
+							<hbox>
+								<html:input type="checkbox" id="context-menu"/>
+								<spacer flex="1"/>
+							</hbox>
+						</row>
+						<row align="center">
+							<label value="&label.storagedir;"/>
+							<vbox>
+								<textbox id="dwhelper-storagedir"/>
+								<button label="&button.changedir;" oncommand="changeStorageDir()"/>
+							</vbox>
+						</row>
+						<row align="center">
+							<label value="&label.menu-http-expiration;"/>
+							<hbox>
+								<textbox id="dwhelper-menuhttpexpiration"/>
+								<spacer flex="1"/>
+							</hbox>
+						</row>
+					</rows>	
+				</grid>
+			</tabpanel>
+<!-- 
+			<tabpanel flex="1" hidden="true">
+				<vbox flex="1">
+					<checkbox id="yt-keep-spaces" label="&label.keep-spaces;"/>
+					<spacer flex="1"/>
+				</vbox>
+			</tabpanel>
+ -->
+
+			<tabpanel flex="1">
+				<vbox flex="1">
+					<description>
+						&medialink.description;
+					</description>
+					<grid flex="1">
+						<columns>
+							<column/>	
+							<column flex="1"/>
+						</columns>
+						<rows>
+							<row align="center">
+								<label value="&label.enable-medialink-method;"/>
+								<hbox>
+									<html:input type="checkbox" id="dwhelper-enablemedialinkmethod" onchange="updateMediaLink()"/>
+									<spacer flex="1"/>
+								</hbox>
+							</row>
+							<row align="top" observes="bc-medialink">
+								<label value="&label.file-extensions;"/>
+								<ExtList id="dwhelper-medialink-exts" flex="1"
+									defaults="jpg|jpeg|gif|png|mpg|mpeg|avi|rm|wmv|mov|flv"
+									/>
+							</row>
+						</rows>
+					</grid>
+				</vbox>
+			</tabpanel>
+
+			<tabpanel flex="1">
+				<vbox flex="1">
+					<description>
+						&mediareq.description;
+					</description>
+					<hbox flex="1">
+						<label value="&label.file-extensions;"/>
+						<ExtList id="dwhelper-mediareq-exts" flex="1"
+							defaults="flv|ram|mpg|mpeg|avi|rm|wmv|mov|asf"
+							/>
+					</hbox>
+				</vbox>
+			</tabpanel>
+
+			<tabpanel>
+				<vbox flex="1">
+					<description>
+						&mediaweight.description;
+					</description>
+					<grid flex="1">
+						<columns>
+							<column/>	
+							<column/>	
+							<column flex="1"/>
+						</columns>
+						<rows>
+							<row align="center">
+								<label value="&label.mediaweight-enabled;"/>
+								<hbox>
+									<html:input type="checkbox" id="mediaweight-enabled" onchange="updateMediaWeight()"/>
+									<spacer flex="1"/>
+								</hbox>
+							</row>
+							<row align="center" observes="bc-mediaweight">
+								<label value="&label.mediaweight-threshold;"/>
+								<hbox>
+									<textbox id="mediaweight-threshold"/>
+									<spacer flex="1"/>
+								</hbox>
+							</row>
+						</rows>
+					</grid>
+				</vbox>
+			</tabpanel>
+
+
+		</tabpanels>
+	</tabbox>
+</dialog>

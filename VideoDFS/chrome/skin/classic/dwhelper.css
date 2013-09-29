@@ -1,0 +1,139 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#dwhelper-toolbaritem  {
+	padding: 0px;
+	margin: 0px;
+}
+
+#dwhelper-button  {
+  list-style-image: url("chrome://dwhelper/skin/dwhelper16-on.gif");
+  -moz-box-orient: vertical;
+  -moz-box-pack: end;
+}
+
+#dwhelper-button.on  {
+  list-style-image: url("chrome://dwhelper/skin/dwhelper24-anim.gif");
+}
+
+toolbar[iconsize="small"] #dwhelper-button.on  {
+  list-style-image: url("chrome://dwhelper/skin/dwhelper16-anim.gif");
+}
+
+#dwhelper-button.on-noanim  {
+  list-style-image: url("chrome://dwhelper/skin/dwhelper24-on.gif");
+}
+
+toolbar[iconsize="small"] #dwhelper-button.on-noanim  {
+  list-style-image: url("chrome://dwhelper/skin/dwhelper16-on.gif");
+}
+
+#dwhelper-button.off  {
+  list-style-image: url("chrome://dwhelper/skin/dwhelper24-off.gif");
+}
+
+toolbar[iconsize="small"] #dwhelper-button.off  {
+  list-style-image: url("chrome://dwhelper/skin/dwhelper16-off.gif");
+}
+
+.controler-entry .menu-iconic-text {
+	padding-left: 10px;
+}
+
+#about-version {
+	font-weight: bold;
+}
+
+tab.dwhelper-tab label {
+	padding-left: 4px;
+}
+
+tab.dwhelper-tab image {
+	margin-top: 4px;
+}
+
+#dwhelper-donate {
+	width: 400px;
+}
+
+#dwhelper-donate #congratulations {
+	font-size: large;
+	font-weight: bold;
+}
+
+#dwhelper-donate #not-again {
+	padding: 10px 10px 10px 10px;
+}
+
+#dwhelper-donate description {
+	padding: 10px 10px 10px 10px;
+}
+
+#dwhelper-media-sites {
+	width: 600px;
+	height: 200px;
+	margin-top: 5px;
+}
+
+.dwhelper-button-line {
+	padding-top: 10px;
+}
+
+#dwhelper-media-sites treechildren::-moz-tree-row(selected) { background-color: #FFFFAA; }
+#dwhelper-media-sites treechildren::-moz-tree-row(odd) { background-color: #EEEEEE; }
+#dwhelper-media-sites treechildren::-moz-tree-row(odd, selected) { background-color: #FFFFAA; }
+#dwhelper-media-sites treechildren::-moz-tree-cell-text(selected) { color: #000000; }
+#dwhelper-media-sites treechildren::-moz-tree-cell-text(odd, selected) { color: #000000; }
+
+#dwhelper-site-info {
+	width: 250px;
+}
+
+#dwhelper-site-info description {
+	font-style: italic;
+	max-width: 200px;
+}
+
+#dwhelper-add-comment {
+	width: 400px;
+}
+
+#dwhelper-add-comment description {
+	font-style: italic;
+	font-size: x-small;
+	padding-bottom: 5px;
+}
+
+#dwhelper-site-name {
+	font-size: medium;
+	font-weight: bold;
+}
+
+#dwhelper-sites>vbox {
+	overflow: auto; 
+}
+
+#dwhelper-site>vbox {
+	overflow: auto; 
+}
+
+#dwhelper-comment .waiter {
+	padding-top: 20px;
+}
+
+#dwhelper-report description {
+	font-style: italic;
+	font-size: x-small;
+	padding-bottom: 5px;
+}
+
+#dwhelper-report>vbox>groupbox>description {
+	font-size: small;
+}
+
+#dwhelper-wait-panel {
+	padding: 20px;
+}
+
+#dwhelper-sites tree treechildren::-moz-tree-cell-text(adult) {
+	color: #806060;
+}

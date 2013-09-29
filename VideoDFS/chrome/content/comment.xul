@@ -1,0 +1,218 @@
+<?xml version="1.0"?> 
+<!-- *****************************************************************************
+ *            Copyright (c) 2006 Michel Gutierrez. All Rights Reserved.
+ ****************************************************************************** -->
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/skin/dwhelper.css" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/content/bindings.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://dwhelper/locale/dwhelper.dtd" >
+
+<window id="dwhelper-comment"
+		title="&title.comment;"
+        flex="1"
+        onload="onLoad()"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        persist="screenX screenY"
+        >
+
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/dwhutil.js" />
+
+	<script><![CDATA[
+
+var Util=Components.classes["@downloadhelper.net/util-service;1"]
+	.getService(Components.interfaces.dhIUtilService);
+
+var datasource=null;
+var siteres=null;
+
+function onLoad() {
+	
+	var props=window.arguments[0].QueryInterface(Components.interfaces.nsIProperties);
+	datasource=props.get("datasource",Components.interfaces.nsIRDFDataSource);
+	siteres=props.get("siteres",Components.interfaces.nsIRDFResource);
+	var siteName=Util.getPropertyValueRS(datasource,siteres,"http://downloadhelper.net/dwhelper/1.0#name");
+	document.getElementById("dwhelper-site-name").setAttribute("value",siteName);
+
+	var x=document.documentElement.getAttribute("screenX");
+	var y=document.documentElement.getAttribute("screenY");
+	window.moveTo(x,y);
+
+	document.getElementById("author").focus();
+
+}
+
+function submitComment() {
+	var siteId=Util.getPropertyValueRS(datasource,siteres,"http://downloadhelper.net/dwhelper/1.0#id");
+	var authorField=document.getElementById("author");
+	var titleField=document.getElementById("title");
+	var ratingField=document.getElementById("rating");
+	var commentField=document.getElementById("comment");
+	var tagsField=document.getElementById("tags");
+	
+	var author=authorField.value;
+	if(author.length==0) {
+		alert(Util.getText("error.comment.author-too-short"));
+		authorField.focus();
+		return;
+	}
+	var title=titleField.value;
+	if(title.length==0) {
+		alert(Util.getText("error.comment.title-too-short"));
+		titleField.focus();
+		return;
+	}
+	var rating=ratingField.value;
+	if(rating=="-1") {
+		alert(Util.getText("error.comment.no-rating"));
+		ratingField.focus();
+		return;
+	}
+	var comment=commentField.value;
+	if(comment.length<12) {
+		alert(Util.getText("error.comment.comment-too-short"));
+		commentField.focus();
+		return;
+	}
+	var tags=tagsField.value;
+	
+	var obj={
+		siteid: siteId,
+		author: author,
+		authorid: Util.getProfileDir().leafName,
+		title: title,
+		comment: comment,
+		rating: rating,
+		tags: tags
+	};
+	
+	var body=DWHUtil.urlEncodeObject(obj);
+		
+	var cb=function(status,req,args) {
+		if(status==false) {
+			alert(Util.getText("error.create-comment.connection"));
+		} else {
+			var succeed=Util.xpGetString(req.responseXML.documentElement,"succeed");
+			if(succeed=="true") {
+				//alert(Util.getText("message.create-comment.success"));
+			} else {
+				var errMsg=Util.xpGetString(req.responseXML.documentElement,"error");
+				alert(Util.getText(errMsg));
+			}
+		}
+		window.close();
+		window.location="about:blank"; // to finish closing on window
+	}
+	
+	DWHUtil.loadAsync("http://www.downloadhelper.net/create-comment.php",cb,{ window: window },body,"POST", 
+		{ contentType: "application/x-www-form-urlencoded" });
+		
+	//document.getElementById("deck").selectedIndex=1;
+	document.getElementById("main-panel").setAttribute("hidden","true");
+	document.getElementById("dwhelper-wait-panel").setAttribute("hidden","false");
+	setTimeout(function() {window.sizeToContent();},0);
+}
+
+]]>
+	</script>
+	
+	<vbox>
+	
+	<vbox id="main-panel">
+				
+		<groupbox>
+			<caption label="&caption.comment.comment;"/>
+			
+			<grid id="dwhelper-add-comment">
+				<columns>
+					<column/>
+					<column flex="1"/>
+				</columns>
+				<rows>
+					<row>
+						<label value="&label.comment.site;"/>
+						<label id="dwhelper-site-name"/>
+					</row>
+					<row>
+						<label value="&label.comment.author;"/>
+						<vbox>
+							<textbox id="author"/>
+							<description>&help.comment.author;</description>
+						</vbox>
+					</row>
+					<row>
+						<label value="&label.comment.title;"/>
+						<vbox>
+							<textbox id="title"/>
+							<description>&help.comment.title;</description>
+						</vbox>
+					</row>
+					<row>
+						<label value="&label.comment.rating;"/>
+						<vbox>
+							<hbox>
+								<menulist id="rating" label="" value="">
+									<menupopup>
+										<menuitem label="--" value="-1"/>
+										<menuitem label="0" value="0"/>
+										<menuitem label="1" value="1"/>
+										<menuitem label="2" value="2"/>
+										<menuitem label="3" value="3"/>
+										<menuitem label="4" value="4"/>
+										<menuitem label="5" value="5"/>
+									</menupopup>
+								</menulist>
+								<spacer flex="1"/>
+							</hbox>
+							<description>&help.comment.rating;</description>
+						</vbox>
+					</row>
+					<row>
+						<label value="&label.comment.comment;"/>
+						<vbox>
+							<textbox id="comment" multiline="true" rows="5"/>
+							<description>&help.comment.comment;</description>
+						</vbox>
+					</row>
+					<row>
+						<label value="&label.comment.tags;"/>
+						<vbox>
+							<textbox id="tags"/>
+							<description>&help.comment.tags;</description>
+						</vbox>
+					</row>
+				</rows>
+			</grid>
+
+			<hbox class="dwhelper-button-line">
+				<spacer flex="1"/>
+				<button label="&button.comment.submit;" oncommand="submitComment()"/>
+				<button label="&button.comment.close;" oncommand="window.close()"/>
+			</hbox>
+
+		</groupbox>
+			
+	</vbox>
+	
+	<vbox id="dwhelper-wait-panel" hidden="true">
+		<spacer flex="1"/>
+		<hbox>
+			<spacer flex="1"/>
+			<label value="&label.comment.wait;"/>
+			<spacer flex="1"/>
+		</hbox>
+		<spacer flex="1"/>
+		<hbox>
+			<spacer flex="1"/>
+			<image class="waiter" src="chrome://dwhelper/skin/dwhelper24-anim.gif"/>
+			<spacer flex="1"/>
+		</hbox>
+		<spacer flex="1"/>
+	</vbox>
+	
+	
+	</vbox>
+
+</window>

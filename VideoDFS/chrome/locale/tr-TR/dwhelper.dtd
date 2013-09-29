@@ -1,0 +1,99 @@
+<!ENTITY menu.help "Yardım">
+<!ENTITY menu.manual-check "URL&apos;yi denetle">
+<!ENTITY menu.preferences "Tercihler ...">
+<!ENTITY menu.about "Hakkında ...">
+<!ENTITY label.download-one-by-one "Birer birer indir">
+<!ENTITY label.storagedir "Depolama dizini">
+<!ENTITY button.changedir "Dizini değiştir">
+<!ENTITY error.nohome "Ana dizin bulunmuyor">
+<!ENTITY error.notadirectory "bir dizin değil">
+<!ENTITY title.preferences "Tercihler">
+<!ENTITY title.about "DownloadHelper Hakkında">
+<!ENTITY version.name "DownloadHelper">
+<!ENTITY label.menu-http-expiration "Menü girişi süre dolma zamanı (ms)">
+<!ENTITY label.icon-animation "Simge animasyonu">
+<!ENTITY menu.ytlinks "YouTube link(ler)inden video indir">
+<!ENTITY label.download-mode "İndirme kipi">
+<!ENTITY label.download-mode.normal "Normal">
+<!ENTITY label.download-mode.onebyone "Birer birer">
+<!ENTITY label.download-mode.flashgot "FlashGot">
+<!ENTITY title.credits "Künye">
+<!ENTITY title.general "Genel">
+<!ENTITY title.medialink "MedyaLink">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "MedyaLink yöntemi, dosyaları sayfa üzerindeki HTML linklerine bakarak indirir.">
+<!ENTITY button.add "Ekle">
+<!ENTITY button.default "Öntanımlı">
+<!ENTITY button.remove "Kaldır">
+<!ENTITY label.file-extensions "Dosya uzantıları">
+<!ENTITY title.mediareq "Medyaİstem">
+<!ENTITY mediareq.description "Medyaİstem yöntemi, dışarı giden HTTP istemlerini inceleyerek dosyanın medya dosyası olup olmadığına karar verir.">
+<!ENTITY title.support-dev "DownloadHelper gelişimini destekleyin">
+<!ENTITY label.donate-not-again "Beni bir daha bunun için rahatsız etme">
+<!ENTITY label.donate "Bağışta bulun">
+<!ENTITY label.cancel "Vazgeç">
+<!ENTITY label.congratulations "Tebrikler !">
+<!ENTITY label.keep-spaces "Dosya adlarındaki boşlukları koru">
+<!ENTITY title.sites "DownloadHelper Medya Siteleri">
+<!ENTITY button.sites.close "Kapat">
+<!ENTITY button.sites.open "Aç">
+<!ENTITY button.sites.report "Çalışan site bildir">
+<!ENTITY column.sites.name "Ad">
+<!ENTITY column.sites.rating "Derecelendirme">
+<!ENTITY column.sites.count "Yorumlar">
+<!ENTITY column.sites.date "Eklenme tarihi">
+<!ENTITY column.sites.url "URL">
+<!ENTITY button.site.close "Kapat">
+<!ENTITY label.site.name "Ad">
+<!ENTITY caption.site.site "Medya sitesi">
+<!ENTITY title.site "Medya sitesi">
+<!ENTITY label.site.url "URL">
+<!ENTITY label.site.date "Eklenme">
+<!ENTITY label.site.rating "Derecelendirme">
+<!ENTITY label.site.no-rating "Henüz yok">
+<!ENTITY button.site.check "Siteyi denetle">
+<!ENTITY button.site.comment "Yorum ekle">
+<!ENTITY label.comment.site "Site">
+<!ENTITY title.comment "Yorum">
+<!ENTITY caption.comment.comment "Bir yorum ekle">
+<!ENTITY label.comment.author "Rumuz">
+<!ENTITY help.comment.author "İsim veya rumuzunuz">
+<!ENTITY label.comment.title "Başlık">
+<!ENTITY help.comment.title "Yorumun başlığı">
+<!ENTITY label.comment.comment "Yorum">
+<!ENTITY help.comment.comment "Paragrafları ayırmak için boş satır koymayı unutmayınız">
+<!ENTITY label.comment.tags "Etiketler">
+<!ENTITY help.comment.tags "Boşlukla ayrılmış alakalı etiketler (örn. &apos;türkçe haberler&apos;, veya &apos;yetişkin&apos;)">
+<!ENTITY label.comment.rating "Derecelendirme">
+<!ENTITY help.comment.rating "0 = hiç ilgimi çekmiyor, 5 = harika site">
+<!ENTITY button.comment.close "Kapat">
+<!ENTITY button.comment.submit "Yorumu gönder">
+<!ENTITY label.comment.wait "Yorumunuz gönderiliyor. Lütfen bekleyin ...">
+<!ENTITY title.report "Çalışan site bildir">
+<!ENTITY caption.report.report "Bir çalışan site daha bildir">
+<!ENTITY message.report.check-new "Lütfen bu sitenin site listesinde bulunmadığından emin olun">
+<!ENTITY label.report.name "Site adı">
+<!ENTITY help.report.name "Site için yaygın ad, örn. YouTube">
+<!ENTITY label.report.url "Site URL&apos;si">
+<!ENTITY help.report.url "Sitenin adresi, örn. http://www.youtube.com">
+<!ENTITY label.report.author "İsminiz">
+<!ENTITY help.report.author "Bildirinin künyesi için isim. Boş da bırakabilirsiniz">
+<!ENTITY label.report.description "Açıklama">
+<!ENTITY help.report.description "Bu sitede ne bulunabileceği hakkında kısa bir açıklama">
+<!ENTITY button.report.submit "Site gönder">
+<!ENTITY button.report.close "Kapat">
+<!ENTITY label.report.wait "Siteniz gönderiliyor. Lütfen bekleyin ...">
+<!ENTITY menu.sites "Desteklenen siteler">
+<!ENTITY label.sites.list-adult "Doğrudan erişilebilen yetişkin içerikli siteleri de göster">
+<!ENTITY label.report.adult "Yetişkin içeriğe doğrudan erişilebilir">
+<!ENTITY label.context-menu "Sağ-tık menüsünde görüntüle">
+<!ENTITY menu.to-sumo "SUMO.tv&apos;ye video gönder">
+<!ENTITY label.enable-plugin-method "Eklenti imzası yöntemini etkinleştir">
+<!ENTITY label.yt-unmodified-filename "YouTube dosya adlarını koru (CJK)">
+<!ENTITY label.disable-dwcount-cookie "İndirme sayısını tutan çerezi devredışı bırak">
+<!ENTITY column.sites.duration "İlgi">
+<!ENTITY title.mediaweight "MedyaAğırlık">
+<!ENTITY label.mediaweight-enabled "MedyaAğırlık etkin">
+<!ENTITY label.mediaweight-threshold "Medya boyut eşiği">
+<!ENTITY label.enable-medialink-method "MedyaLink etkin">
+<!ENTITY mediaweight.description "MedyaAğırlık yöntemi, HTTP cevaplarını inceler ve belge boyutuna dayanarak medya dosyasının varlığını tespit eder.">

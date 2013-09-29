@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!-- *****************************************************************************
+ *            Copyright (c) 2006 Michel Gutierrez. All Rights Reserved.
+ ****************************************************************************** -->
+<?xml-stylesheet href="chrome://dwhelper/skin/dwhelper.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://dwhelper/locale/dwhelper.dtd" >
+
+<overlay id="dwhelper"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/dwhutil.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/vdown.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/keepvid.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/youtube.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/medialink.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/mediareq.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/mediaresp.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/progress.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/ytlinks.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/plugins.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/mediaweight.js" />
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/dwhelper.js" />
+	<script type="application/x-javascript">
+		window.addEventListener("load",DWHelper_onLoadOverlay,true);
+	</script>
+
+
+	<toolbarpalette id="BrowserToolbarPalette">
+
+		<toolbaritem 
+		  	class="toolbaritem-1 chromeclass-toolbar-additional"
+			id="dwhelper-toolbaritem" align="center" pack="end" flex="0" context="_child"
+			>
+			<toolbarbutton id="dwhelper-button"
+			  	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	    		flex="0"
+				image="chrome://dwhelper/skin/dwhelper16-on.gif"
+				label="&version.name;" hidden="false"
+				oncommand="DWHelper_buttonClicked(event)"
+				tooltiptext="&version.name;"
+				>
+				<menupopup id="dwhelper-menupopup"/>
+			</toolbarbutton>
+			<label id="dwhelper-count"/>
+			<menupopup  id="dwhelper-bctxmenupopup"/>
+		</toolbaritem>
+
+	</toolbarpalette>
+
+	<popup id="contentAreaContextMenu">
+    	<menu id="dwhelper-ctxmenu"
+      		label="&version.name;" 
+			insertbefore="context-sep-selectall,context-sep-stop,context-sep-copylink"
+		>
+			<menupopup id="dwhelper-ctxmenupopup"/>
+		</menu>
+		<menuitem id="dwhelper-ytlinks" oncommand="YTLinks.menuClicked(event)" hidden="true" label="&menu.ytlinks;"/> 
+	</popup>
+
+	<popup id="menu_ToolsPopup">
+		<menuseparator/>
+    	<menu id="dwhelper-toolsmenu"
+      		label="&version.name;" 
+		>
+			<menupopup id="dwhelper-toolsmenupopup"/>
+		</menu>
+	</popup>
+	
+	<!-- 
+	<hbox id="browser">
+		<vbox id="dwhelper_browser_vbox" hidden="true"/>
+	</hbox>
+	 -->
+	 
+</overlay>
+

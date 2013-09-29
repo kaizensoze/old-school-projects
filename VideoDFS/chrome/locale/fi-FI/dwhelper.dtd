@@ -1,0 +1,101 @@
+<!ENTITY menu.help "Ohje">
+<!ENTITY menu.manual-check "Tarkista URL">
+<!ENTITY menu.preferences "Asetukset...">
+<!ENTITY menu.about "Tietoja...">
+<!ENTITY label.download-one-by-one "Lataa yksitellen">
+<!ENTITY label.storagedir "Tallennushakemisto">
+<!ENTITY button.changedir "Vaihda hakemistoa">
+<!ENTITY error.nohome "Kotihakemistoa ei ole olemassa">
+<!ENTITY error.notadirectory "ei ole hakemisto">
+<!ENTITY title.preferences "Asetukset">
+<!ENTITY title.about "Tietoja DownloadHelper:sta">
+<!ENTITY version.name "DownloadHelper">
+<!ENTITY label.menu-http-expiration "Valikon merkinnän erääntyminen (ms)">
+<!ENTITY label.icon-animation "Kuvakkeen animointi">
+<!ENTITY menu.ytlinks "Lataa videoita YouTuben link(e)istä">
+<!ENTITY label.download-mode "Lataustapa">
+<!ENTITY label.download-mode.normal "Normaali">
+<!ENTITY label.download-mode.onebyone "Yksitellen">
+<!ENTITY label.download-mode.flashgot "FlashGot">
+<!ENTITY title.credits "Tekijät">
+<!ENTITY title.general "Yleiset">
+<!ENTITY title.medialink "MediaLink">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "MediaLink -metodi sallii ladata tiedostoja HTML-sivuilta">
+<!ENTITY button.add "Lisää">
+<!ENTITY button.default "Oletus">
+<!ENTITY button.remove "Poista">
+<!ENTITY label.file-extensions "Tiedostomuodot">
+<!ENTITY title.mediareq "MediaReq">
+<!ENTITY mediareq.description "MediaReq -metodi tutkii lähtevän HTTP-pyynnön tarkistaakseen, onko se mediatiedosto">
+<!ENTITY title.support-dev "Avusta DownloadHelper:n työryhmää">
+<!ENTITY label.donate-not-again "Älä häiritse minua tällä enää">
+<!ENTITY label.donate "Lahjoita">
+<!ENTITY label.cancel "Peruuta">
+<!ENTITY label.congratulations "Onnittelut!">
+<!ENTITY label.keep-spaces "Jätä välilyönnit tiedostojen nimiin">
+<!ENTITY title.sites "DownloadHelper:n Mediasivustot">
+<!ENTITY button.sites.close "Sulje">
+<!ENTITY button.sites.open "Avaa">
+<!ENTITY button.sites.report "Ilmoita uudesta sivusta">
+<!ENTITY column.sites.name "Nimi">
+<!ENTITY column.sites.rating "Arvosana">
+<!ENTITY column.sites.count "Kommentteja">
+<!ENTITY column.sites.date "Lisätty">
+<!ENTITY column.sites.url "Osoite">
+<!ENTITY button.site.close "Sulje">
+<!ENTITY label.site.name "Nimi">
+<!ENTITY caption.site.site "Mediasivusto">
+<!ENTITY title.site "Mediasivusto">
+<!ENTITY label.site.url "Osoite">
+<!ENTITY label.site.date "Lisätty">
+<!ENTITY label.site.rating "Arvosana">
+<!ENTITY label.site.no-rating "Ei vielä">
+<!ENTITY button.site.check "Tarkista sivu">
+<!ENTITY button.site.comment "Lisää kommentti">
+<!ENTITY label.comment.site "Sivu">
+<!ENTITY title.comment "Kommentti">
+<!ENTITY caption.comment.comment "Lisää kommentti">
+<!ENTITY label.comment.author "Nimimerkki">
+<!ENTITY help.comment.author "Nimesi tai nimimerkkisi">
+<!ENTITY label.comment.title "Otsikko">
+<!ENTITY help.comment.title "Kommentin otsikko">
+<!ENTITY label.comment.comment "Kommentti">
+<!ENTITY help.comment.comment "Tyhjät rivit erottavat kappaleet toisistaan">
+<!ENTITY label.comment.tags "Tagit">
+<!ENTITY help.comment.tags "Välilyönnillä erotettuja asiaankuuluvia tageja (esim. &apos;uutiset afrikka&apos;, tai &apos;aikuiset&apos;)">
+<!ENTITY label.comment.rating "Arvosana">
+<!ENTITY help.comment.rating "0 = ei kiinnostusta, 5 = mahtava sivu">
+<!ENTITY button.comment.close "Sulje">
+<!ENTITY button.comment.submit "Lähetä kommentti">
+<!ENTITY label.comment.wait "Kommenttisi lähetetään pian. Odota hetki...">
+<!ENTITY title.report "Ilmoita uudesta sivusta">
+<!ENTITY caption.report.report "Ilmoita uudesta toimivasta sivusta">
+<!ENTITY message.report.check-new "Muista, että sivu ei saa esiintyä &quot;Tuetut sivut&quot;-listalla">
+<!ENTITY label.report.name "Sivun nimi">
+<!ENTITY help.report.name "Yleisessä käytössä oleva nimi sivulle, esim. YouTube">
+<!ENTITY label.report.url "Sivun osoite">
+<!ENTITY help.report.url "Sivun osoite, esim. http://www.youtube.com">
+<!ENTITY label.report.author "Nimesi">
+<!ENTITY help.report.author "Henkilön nimi, joka lähetti ilmoituksen. Voit jättää tyhjäksi.">
+<!ENTITY label.report.description "Kuvaus">
+<!ENTITY help.report.description "Lyhyt kuvaus, mitä tältä sivulta on löydettävissä">
+<!ENTITY button.report.submit "Lähetä ilmoitus">
+<!ENTITY button.report.close "Sulje">
+<!ENTITY label.report.wait "Sivuilmoitusta lähetetään. Odota hetki...">
+<!ENTITY menu.sites "Tuetut sivut">
+<!ENTITY label.sites.list-adult "Näytä sivut, joissa on aikuisille suunnattua sisältöä">
+<!ENTITY label.report.adult "Sivu sisältää aikuisille suunnattua sisältöä">
+<!ENTITY label.context-menu "Näytä kontekstivalikossa">
+<!ENTITY menu.to-sumo "Lähetä video SUMO.tv:n">
+<!ENTITY label.enable-plugin-method "Käytä metodia">
+<!ENTITY label.yt-unmodified-filename "Säilytä YouTuben tiedostonimet (CJK)">
+<!ENTITY label.disable-dwcount-cookie "Poista latauslaskurin evästeet käytöstä">
+
+<!ENTITY column.sites.duration "Interest">
+<!ENTITY title.mediaweight "MediaWeight">
+<!ENTITY label.mediaweight-enabled "MediaWeight enabled">
+<!ENTITY label.mediaweight-threshold "Media size threshold">
+
+<!ENTITY label.enable-medialink-method "MediaLink enabled">
+<!ENTITY mediaweight.description "The MediaWeight method examines HTTP responses to decide if it is a media file based on the document size">

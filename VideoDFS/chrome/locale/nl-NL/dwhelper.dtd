@@ -1,0 +1,99 @@
+<!ENTITY menu.help "Help">
+<!ENTITY menu.manual-check "URL controleren">
+<!ENTITY menu.preferences "Voorkeuren...">
+<!ENTITY menu.about "Over...">
+<!ENTITY label.download-one-by-one "Eén voor één downloaden">
+<!ENTITY label.storagedir "Opslagmap">
+<!ENTITY button.changedir "Map wijzigen">
+<!ENTITY error.nohome "Home map bestaat niet">
+<!ENTITY error.notadirectory "is geen map">
+<!ENTITY title.preferences "Voorkeuren">
+<!ENTITY title.about "Over DownloadHelper">
+<!ENTITY version.name "DownloadHelper">
+<!ENTITY label.menu-http-expiration "Menu-ingave verlooptijd (ms)">
+<!ENTITY label.icon-animation "Pictogramanimatie">
+<!ENTITY menu.ytlinks "Video&apos;s van YouTube koppeling(en) downloaden">
+<!ENTITY label.download-mode "Downloadmodus">
+<!ENTITY label.download-mode.normal "Normaal">
+<!ENTITY label.download-mode.onebyone "Eén voor één">
+<!ENTITY label.download-mode.flashgot "FlashGot">
+<!ENTITY title.credits "Credits">
+<!ENTITY title.general "Algemeen">
+<!ENTITY title.medialink "MediaLink">
+<!ENTITY title.youtube "YouTube">
+<!ENTITY medialink.description "De MediaLink methode maakt het downloaden van bestanden van een pagina mogelijk door te kijken naar HTML koppelingen">
+<!ENTITY button.add "Toevoegen">
+<!ENTITY button.default "Standaard">
+<!ENTITY button.remove "Verwijderen">
+<!ENTITY label.file-extensions "Bestandsextensies">
+<!ENTITY title.mediareq "MediaReq">
+<!ENTITY mediareq.description "De MediaReq methode onderzoekt uitgaande HTTP-verzoeken om te bekijken of het een mediabestand is">
+<!ENTITY title.support-dev "Ondersteun de DownloadHelper ontwikkeling">
+<!ENTITY label.donate-not-again "Val me daar niet meer mee lastig">
+<!ENTITY label.donate "Doneren">
+<!ENTITY label.cancel "Annuleren">
+<!ENTITY label.congratulations "Gefeliciteerd!">
+<!ENTITY label.keep-spaces "Spaties in bestandsnamen behouden">
+<!ENTITY title.sites "DownloadHelper Media sites">
+<!ENTITY button.sites.close "Sluiten">
+<!ENTITY button.sites.open "Openen">
+<!ENTITY button.sites.report "Werkende site rapporteren">
+<!ENTITY column.sites.name "Naam">
+<!ENTITY column.sites.rating "Beoordeling">
+<!ENTITY column.sites.count "Commentaar">
+<!ENTITY column.sites.date "Datum toegevoegd">
+<!ENTITY column.sites.url "URL">
+<!ENTITY button.site.close "Sluiten">
+<!ENTITY label.site.name "Naam">
+<!ENTITY caption.site.site "Mediasite">
+<!ENTITY title.site "Mediasite">
+<!ENTITY label.site.url "URL">
+<!ENTITY label.site.date "Toegevoegd">
+<!ENTITY label.site.rating "Beoordeling">
+<!ENTITY label.site.no-rating "Nog geen">
+<!ENTITY button.site.check "Site controleren">
+<!ENTITY button.site.comment "Commentaar toevoegen">
+<!ENTITY label.comment.site "Site">
+<!ENTITY title.comment "Commentaar">
+<!ENTITY caption.comment.comment "Commentaar toevoegen">
+<!ENTITY label.comment.author "Nickname">
+<!ENTITY help.comment.author "Uw naam of nick">
+<!ENTITY label.comment.title "Titel">
+<!ENTITY help.comment.title "De titel van het commentaar">
+<!ENTITY label.comment.comment "Commentaar">
+<!ENTITY help.comment.comment "Blanco regels om paragrafen te scheiden">
+<!ENTITY label.comment.tags "Labels">
+<!ENTITY help.comment.tags "Door spaties gescheiden relevante labels (b.v. &apos;news indian&apos;, of &apos;adult&apos;)">
+<!ENTITY label.comment.rating "Beoordeling">
+<!ENTITY help.comment.rating "0 = beslist niet interessant, 5 = geweldige site">
+<!ENTITY button.comment.close "Sluiten">
+<!ENTITY button.comment.submit "Commentaar indienen">
+<!ENTITY label.comment.wait "Uw commentaar wordt ingediend. Wachten a.u.b....">
+<!ENTITY title.report "Werkende site rapporteren">
+<!ENTITY caption.report.report "Een nieuwe werkende site rapporteren">
+<!ENTITY message.report.check-new "Controleer a.u.b. of deze site niet al op de lijst met sites voorkomt">
+<!ENTITY label.report.name "Sitenaam">
+<!ENTITY help.report.name "Gebruikelijke naam voor de site, b.v. YouTube">
+<!ENTITY label.report.url "Site-URL">
+<!ENTITY help.report.url "Het adres van de site, b.v. http://www.youtube.com">
+<!ENTITY label.report.author "Uw naam">
+<!ENTITY help.report.author "De naam voor de credits van het rapport. Mag leeg blijven">
+<!ENTITY label.report.description "Beschrijving">
+<!ENTITY help.report.description "Een korte beschrijving van wat kan worden gevonden op deze site">
+<!ENTITY button.report.submit "Site indienen">
+<!ENTITY button.report.close "Sluiten">
+<!ENTITY label.report.wait "Uw site wordt ingediend. Wachten a.u.b....">
+<!ENTITY menu.sites "Ondersteunde sites">
+<!ENTITY label.sites.list-adult "Sites met rechtstreeks toegankelijke inhoud voor volwassenen weergeven">
+<!ENTITY label.report.adult "Inhoud voor volwassenen rechtstreeks toegankelijk">
+<!ENTITY label.context-menu "In contextmenu weergeven">
+<!ENTITY menu.to-sumo "Video op SUMO.tv posten">
+<!ENTITY label.enable-plugin-method "Plugin signature-methode inschakelen">
+<!ENTITY label.yt-unmodified-filename "YouTube-bestandsnamen (CJK) behouden">
+<!ENTITY label.disable-dwcount-cookie "Cookie met aantal downloads uitschakelen">
+<!ENTITY column.sites.duration "Interesse">
+<!ENTITY title.mediaweight "MediaWeight">
+<!ENTITY label.mediaweight-enabled "MediaWeight ingeschakeld">
+<!ENTITY label.mediaweight-threshold "Drempel mediagrootte">
+<!ENTITY label.enable-medialink-method "MediaLink ingeschakeld">
+<!ENTITY mediaweight.description "De MediaWeight methode onderzoekt HTTP antwoorden om te bepalen of het een mediabestand is gebaseerd op de documentgrootte">

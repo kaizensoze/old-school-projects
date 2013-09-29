@@ -1,0 +1,59 @@
+<?xml version="1.0"?> 
+<!-- *****************************************************************************
+ *            Copyright (c) 2006 Michel Gutierrez. All Rights Reserved.
+ ****************************************************************************** -->
+<?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://dwhelper/skin/dwhelper.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://dwhelper/locale/dwhelper.dtd" >
+
+<dialog id="dwhelper-about"
+		title="&title.about;"
+        flex="1"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        buttons="accept"
+        onload="onLoad()"
+        >
+
+	<script type="application/x-javascript"
+		src="chrome://dwhelper/content/dwhutil.js" />
+	<script>
+function onLoad() {
+	var fullName=DWHUtil.getFText("version.fullname",
+		[ DWHUtil.getVersion() ]);
+	document.getElementById("about-version").value=fullName;
+}
+
+function knowMore() {
+	window.arguments[0].knowMore=true;
+	window.close();
+}
+	</script>
+
+	<html:div>
+		<tabbox style="width: 300px;" flex="1">
+			<tabs>
+				<tab label="&version.name;"/>
+			</tabs>
+			<tabpanels flex="1">
+				<tabpanel flex="1">
+					<vbox flex="1">
+						<hbox>
+							<image src="chrome://dwhelper/skin/dwhelper-anim.gif" style="width: 48px; height: 48px;"/>
+							<label id="about-version" style="padding: 20px;" />
+						</hbox>
+						<description>
+						이 Firefox 확장 기능은 무료로 제공되고 있습니다.
+						</description>
+						<description flex="1">
+						더 자세한 정보는 
+							<html:a onclick="knowMore()" style="color: Blue; text-decoration: underline;">여기</html:a>를 누르십시오.
+						</description>
+					</vbox>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</html:div>
+
+</dialog>
